@@ -578,7 +578,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1772723997
 Transform:
   m_ObjectHideFlags: 0
@@ -663,6 +663,9 @@ MonoBehaviour:
   _MoveSpeed: 10
   _JumpPower: 100
   _Rigidbody: {fileID: 1772724002}
+  _Animator: {fileID: 0}
+  _SpriteRender: {fileID: 0}
+  _isGrounded: {fileID: 0}
 --- !u!54 &1772724002
 Rigidbody:
   m_ObjectHideFlags: 0
