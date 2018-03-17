@@ -33,7 +33,9 @@ public class BombManager : MonoBehaviour {
     float p2CountTimer=0;
     //爆弾のprefab
     [SerializeField]
-    GameObject bombPre;
+    GameObject bombPre1;
+    [SerializeField]
+    GameObject bombPre2;
     private void Start()
     {
         bombMaxValue =  stageWidth/bombWidth;
@@ -120,12 +122,15 @@ public class BombManager : MonoBehaviour {
         if (_attr == CharacterAttr.P1)
         {
             p = Stage1.transform;
+            var b = Instantiate(bombPre1, _pos, Quaternion.identity, p);
+            bombs[bombArrayNumber] = b;
         }
         if (_attr == CharacterAttr.P2)
         {
             p = Stage2.transform;
+            var b = Instantiate(bombPre2, _pos, Quaternion.identity, p);
+            bombs[bombArrayNumber] = b;
         }
-        var b=Instantiate(bombPre,_pos,Quaternion.identity,p);
-        bombs[bombArrayNumber]=b;
+
     }
 }

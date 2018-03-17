@@ -15,12 +15,12 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Character
+  - Bomb
+  - Effect
+  - Field
+  - BombArea
+  - isGrounded
   - 
   - 
   - 

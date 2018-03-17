@@ -128,5 +128,6 @@ public class test_Character : MonoBehaviour {
 
     public void Damage(int value)
     {
+
     }
 }
