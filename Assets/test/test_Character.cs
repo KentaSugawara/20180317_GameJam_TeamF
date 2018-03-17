@@ -21,9 +21,23 @@ public class test_Character : MonoBehaviour {
     [SerializeField]
     private Rigidbody _Rigidbody;
 
+    [SerializeField]
+    private Animator _Animator;
+
+    [SerializeField]
+    private SpriteRenderer _SpriteRender;
+
+    [SerializeField]
+    private test_isGrounded _isGrounded;
+
+    private bool _isRun;
+
+    private int hash_isRun = Animator.StringToHash("isRun");
+    private int hash_isLeft = Animator.StringToHash("isLeft");
 
     // Use this for initialization
     void Start () {
+        _isRun = false;
         StartCoroutine(Routine_Main());
 	}
 	
@@ -32,10 +46,30 @@ public class test_Character : MonoBehaviour {
         while (true)
         {
             var pos = transform.position;
-            //Debug.Log(Input.GetAxisRaw(_InputName_MoveH));
-            pos.x += Input.GetAxisRaw(_InputName_MoveH) * _MoveSpeed * Time.deltaTime;
+            float h = Input.GetAxisRaw(_InputName_MoveH);
+            pos.x += h * _MoveSpeed * Time.deltaTime;
+            Debug.Log(h);
+            if (h < -0.1f)
+            {
+                _isRun = true;
+                _Animator.SetBool(hash_isRun, true);
+                _Animator.SetBool(hash_isLeft, true);
+                _SpriteRender.flipX = true;
+            }
+            else if (h > 0.1f)
+            {
+                _isRun = true;
+                _Animator.SetBool(hash_isRun, true);
+                _Animator.SetBool(hash_isLeft, false);
+                _SpriteRender.flipX = false;
+            }
+            else
+            {
+                _isRun = true;
+                _Animator.SetBool(hash_isRun, false);
+            }
 
-            if (Input.GetButtonDown(_InputName_Jump))
+            if (_isGrounded.isGrounded && Input.GetButtonDown(_InputName_Jump))
             {
                 _Rigidbody.AddForce(Vector3.up * _JumpPower, ForceMode.Impulse);
             }
