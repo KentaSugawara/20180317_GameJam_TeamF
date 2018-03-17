@@ -18,11 +18,11 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Character
+  - Bomb
+  - Field
+  - Effect
+  - BombArea
   - 
   - 
   - 

@@ -13,6 +13,9 @@ public class test_Character : MonoBehaviour {
     private string _InputName_Jump;
 
     [SerializeField]
+    private string _InputName_MoveBomb;
+
+    [SerializeField]
     private float _MoveSpeed;
 
     [SerializeField]
@@ -30,13 +33,28 @@ public class test_Character : MonoBehaviour {
     [SerializeField]
     private test_isGrounded _isGrounded;
 
+    [SerializeField]
+    private test_FieldManager _FieldManager;
+
+    [SerializeField]
+    private float _BombMoveDelaySeconds = 1.0f;
+
+    [SerializeField]
+    private test_MoveBombArea _BombArea;
+
     private bool _isRun;
+    private bool _inBombMoveDelay = false;
 
     private int hash_isRun = Animator.StringToHash("isRun");
     private int hash_isLeft = Animator.StringToHash("isLeft");
 
     // Use this for initialization
     void Start () {
+        var joysticks = Input.GetJoystickNames();
+        foreach (var j in joysticks)
+        {
+            Debug.Log(j);
+        }
         _isRun = false;
         StartCoroutine(Routine_Main());
 	}
@@ -48,7 +66,7 @@ public class test_Character : MonoBehaviour {
             var pos = transform.position;
             float h = Input.GetAxisRaw(_InputName_MoveH);
             pos.x += h * _MoveSpeed * Time.deltaTime;
-            Debug.Log(h);
+            //Debug.Log(h);
             if (h < -0.1f)
             {
                 _isRun = true;
@@ -69,13 +87,37 @@ public class test_Character : MonoBehaviour {
                 _Animator.SetBool(hash_isRun, false);
             }
 
+            
             if (_isGrounded.isGrounded && Input.GetButtonDown(_InputName_Jump))
             {
+                Debug.Log(_InputName_Jump);
                 _Rigidbody.AddForce(Vector3.up * _JumpPower, ForceMode.Impulse);
+            }
+
+            if (!_inBombMoveDelay)
+            {
+                if (Input.GetButtonDown(_InputName_MoveBomb))
+                {
+                    var target = _BombArea.getTargetBomb();
+                    if (target != null)
+                    {
+                        StartCoroutine(Routine_Delay());
+                    }
+                }
             }
 
             _Rigidbody.position = pos;
             yield return null;
         }
+    }
+
+    private IEnumerator Routine_Delay()
+    {
+        _inBombMoveDelay = true;
+        for (float t = 0.0f; t < _BombMoveDelaySeconds; t += Time.deltaTime)
+        {
+            yield return null;
+        }
+        _inBombMoveDelay = false;
     }
 }
