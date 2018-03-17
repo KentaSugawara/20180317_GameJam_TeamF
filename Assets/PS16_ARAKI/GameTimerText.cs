@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class GameTimerText : MonoBehaviour
 {
-    //    [SerializeField]
-    private float maxTime = 33.3333333f;
+    [SerializeField]
+    private float maxTime = 60.0f;
     private float time;
     private Text t;
 
