@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - bom
-  - player
-  - Fire
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -18,17 +15,11 @@ TagManager:
   - 
   - 
   - 
-  - Character
-  - Bomb
-<<<<<<< HEAD
-  - Field
-  - Effect
-  - BombArea
-=======
-  - Effect
   - 
   - 
->>>>>>> 85565260da916a935b04c36a067513a7375b6882
+  - 
+  - 
+  - 
   - 
   - 
   - 

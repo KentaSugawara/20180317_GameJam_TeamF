@@ -6,6 +6,8 @@ public class CreateEffect : MonoBehaviour {
 
     // Use this for initialization
     [SerializeField] GameObject Effect;
+    [SerializeField] float exptime=3;
+
     bool expFlag=false;
     void Start()
     {
@@ -21,7 +23,7 @@ public class CreateEffect : MonoBehaviour {
 
     IEnumerator Countdown()
     {
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(exptime);
         var effect = Instantiate(Effect);
         effect.transform.position = transform.position;
 
