@@ -125,4 +125,9 @@ public class test_Character : MonoBehaviour {
         }
         _inBombMoveDelay = false;
     }
+
+    public void Damage(int value)
+    {
+
+    }
 }

@@ -961,8 +961,11 @@ MonoBehaviour:
   stageWidth: 20
   p1topLeft: {x: -58, y: 10, z: 0}
   p2topLeft: {x: 42, y: 10, z: 0}
+  Stage1: {fileID: 1049602390}
+  Stage2: {fileID: 1400034375}
   p1Time: 0.5
   p2Time: 0.5
+  popMaxHeight: 10
   bombPre: {fileID: 1652958948824574, guid: 7153d6473f6c9d24fb5603842fd47385, type: 2}
 --- !u!4 &1421849018
 Transform:
@@ -1126,7 +1129,7 @@ MonoBehaviour:
   _SpriteRender: {fileID: 254587162}
   _isGrounded: {fileID: 478148327}
   _FieldManager: {fileID: 1173225643}
-  _BombMoveDelaySeconds: 1
+  _BombMoveDelaySeconds: 0
   _BombArea: {fileID: 979722506}
   _isField1: 1
 --- !u!54 &1772724002
