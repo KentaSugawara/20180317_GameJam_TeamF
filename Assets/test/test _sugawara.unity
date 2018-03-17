@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 52563449}
   - component: {fileID: 52563448}
   - component: {fileID: 52563447}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,6 +344,7 @@ MonoBehaviour:
   _FieldManager: {fileID: 0}
   _BombMoveDelaySeconds: 1
   _BombArea: {fileID: 0}
+  _isField1: 1
 --- !u!54 &427715075
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -425,7 +426,7 @@ GameObject:
   - component: {fileID: 478148325}
   - component: {fileID: 478148324}
   - component: {fileID: 478148327}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,8 +729,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cb89ab5191c9d4a8b66dc58d1d1919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Field1: {fileID: 0}
-  _Field2: {fileID: 0}
+  _Field1: {fileID: 1049602391}
+  _Field2: {fileID: 1400034376}
 --- !u!4 &1173225644
 Transform:
   m_ObjectHideFlags: 0
@@ -786,8 +787,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -809,7 +810,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1178022202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50, y: 1, z: -10}
+  m_LocalPosition: {x: 50, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -826,7 +827,7 @@ GameObject:
   - component: {fileID: 1209037618}
   - component: {fileID: 1209037617}
   - component: {fileID: 1209037616}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1400034376
 Transform:
   m_ObjectHideFlags: 0
@@ -928,6 +929,53 @@ Transform:
   - {fileID: 427715073}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1421849016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1421849018}
+  - component: {fileID: 1421849017}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1421849017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1421849016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed531eeec5be277469f7111f89817143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombWidth: 2
+  stageWidth: 20
+  p1topLeft: {x: -58, y: 10, z: 0}
+  p2topLeft: {x: 42, y: 10, z: 0}
+  p1Time: 0.5
+  p2Time: 0.5
+  bombPre: {fileID: 1652958948824574, guid: 7153d6473f6c9d24fb5603842fd47385, type: 2}
+--- !u!4 &1421849018
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1421849016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 61.63606, y: -15.711929, z: -26.434471}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1680240992
 GameObject:
@@ -980,8 +1028,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1003,7 +1051,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1680240992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50, y: 1, z: -10}
+  m_LocalPosition: {x: -50, y: 5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1020,7 +1068,7 @@ GameObject:
   - component: {fileID: 1772723999}
   - component: {fileID: 1772724002}
   - component: {fileID: 1772724001}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Character1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1080,6 +1128,7 @@ MonoBehaviour:
   _FieldManager: {fileID: 1173225643}
   _BombMoveDelaySeconds: 1
   _BombArea: {fileID: 979722506}
+  _isField1: 1
 --- !u!54 &1772724002
 Rigidbody:
   m_ObjectHideFlags: 0

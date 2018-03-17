@@ -42,6 +42,9 @@ public class test_Character : MonoBehaviour {
     [SerializeField]
     private test_MoveBombArea _BombArea;
 
+    [SerializeField]
+    private bool _isField1 = true;
+
     private bool _isRun;
     private bool _inBombMoveDelay = false;
 
@@ -101,6 +104,8 @@ public class test_Character : MonoBehaviour {
                     var target = _BombArea.getTargetBomb();
                     if (target != null)
                     {
+                        Debug.Log("Move!");
+                        _FieldManager.MoveObject(target.transform, _isField1);
                         StartCoroutine(Routine_Delay());
                     }
                 }
