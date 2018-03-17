@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4401078469662756}
   - component: {fileID: 114610287785317072}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: bomeffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4855626964710272}
   - component: {fileID: 198224729570299466}
   - component: {fileID: 199702108124687064}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Trail White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 4555306450221726}
   - component: {fileID: 198057758260021240}
   - component: {fileID: 199098015709147536}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: TrailsBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4109960153115236}
   - component: {fileID: 198320616146767064}
   - component: {fileID: 199998306999238282}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Shockwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4133566861406884}
   - component: {fileID: 198310365328056466}
   - component: {fileID: 199810858219272792}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: SmokeBlack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 4143135041736002}
   - component: {fileID: 198115318758776900}
   - component: {fileID: 199126711678422800}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Trail Black
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4023109363005216}
   - component: {fileID: 114290759973382186}
   - component: {fileID: 114964493978403322}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 4305861389697990}
   - component: {fileID: 198822970788833524}
   - component: {fileID: 199209258555519160}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 4351181577641666}
   - component: {fileID: 198098271547996042}
   - component: {fileID: 199722013376451962}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Shower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 4127313837337210}
   - component: {fileID: 198585956741366894}
   - component: {fileID: 199903927560686546}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Dust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 4931711325691796}
   - component: {fileID: 198418453737452746}
   - component: {fileID: 199416775675538084}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: TrailsWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac1691131a8c844dafe8b6ace6a172a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 20
+  explosionForce: 0
 --- !u!114 &114610287785317072
 MonoBehaviour:
   m_ObjectHideFlags: 1

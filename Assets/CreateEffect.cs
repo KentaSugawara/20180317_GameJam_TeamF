@@ -6,7 +6,7 @@ public class CreateEffect : MonoBehaviour {
 
     // Use this for initialization
     [SerializeField] GameObject Effect;
-
+    bool expFlag=false;
     void Start()
     {
         
@@ -14,7 +14,9 @@ public class CreateEffect : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (expFlag) return;
         StartCoroutine(Countdown());
+        expFlag = true;
     }
 
     IEnumerator Countdown()
