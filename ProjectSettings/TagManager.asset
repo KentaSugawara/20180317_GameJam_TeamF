@@ -20,9 +20,15 @@ TagManager:
   - 
   - Character
   - Bomb
+<<<<<<< HEAD
   - Field
   - Effect
   - BombArea
+=======
+  - Effect
+  - 
+  - 
+>>>>>>> 85565260da916a935b04c36a067513a7375b6882
   - 
   - 
   - 
