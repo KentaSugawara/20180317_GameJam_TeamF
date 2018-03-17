@@ -657,8 +657,8 @@ MonoBehaviour:
   _InputName_MoveH: Horizontal
   _InputName_MoveV: 
   _InputName_Jump: Jump
-  _MoveSpeed: 0.1
-  _JumpPower: 0.1
+  _MoveSpeed: 10
+  _JumpPower: 100
   _Rigidbody: {fileID: 1772724002}
 --- !u!54 &1772724002
 Rigidbody:
