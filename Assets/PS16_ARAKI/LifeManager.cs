@@ -35,7 +35,7 @@ public class LifeManager : MonoBehaviour
             if (damage == true)
             {
                 GameObject obj = transform.GetChild(nowDamage).gameObject;
-                obj.active = false; ;
+                obj.active = false;
                 ++nowDamage;
                 if (nowDamage == maxLife)
                 {
@@ -44,6 +44,11 @@ public class LifeManager : MonoBehaviour
                 Debug.Log(obj.name);
                 damage = false;
             }
+            if(count>=5){
+                count -= 5;
+                PlayerDamageOn();
+            }
+            count += Time.deltaTime;
         }
     }
 }
