@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CharacterSelectManager : MonoBehaviour
 {
-    [SerializeField] CharacterSelect p1;
-    [SerializeField] CharacterSelect p2;
+    public CharacterSelect p1;
+    public CharacterSelect p2;
     public string[] skillNames;
     public GameObject[] charaFlames;
     public Sprite[] charaSprites;

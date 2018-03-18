@@ -25,6 +25,7 @@ public class CharacterSelect : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        ChageTrigger();
         StartCoroutine(CharaSelect());
         StartCoroutine(CharaSelectMove());
         StartCoroutine(InputCheck());
