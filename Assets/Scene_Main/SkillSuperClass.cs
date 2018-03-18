@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class SkillSuperClass : MonoBehaviour {
     [SerializeField]
+<<<<<<< HEAD
     protected float _UseDelaySeconds;
     public float UseDelaySeconds
     {
         get { return _UseDelaySeconds; }
     }
+=======
+    private float _UseDelaySeconds;
+>>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
 
-    protected bool _canUse = true;
+    protected bool _canUse;
     public bool canUse
     {
         get { return _canUse; }
     }
 
-    protected float _ElapsedDelaySconds = 0.0f;
-    public float ElapsedDelaySconds
+    protected float _RemainingDelaySconds;
+    public float RemainingDelaySconds
     {
-        get { return _ElapsedDelaySconds; }
+        get { return _RemainingDelaySconds; }
+        set { _RemainingDelaySconds = value; }
     }
 
     [SerializeField]
@@ -30,9 +35,14 @@ public class SkillSuperClass : MonoBehaviour {
         set { _isPlayer1 = value; }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
     public virtual bool Use()
     {
+
+
         return false;
     }
 
@@ -47,13 +57,7 @@ public class SkillSuperClass : MonoBehaviour {
 
     protected IEnumerator Routine_Timer(float Seconds, System.Action endcallback)
     {
-        _ElapsedDelaySconds = 0.0f;
-        for (float t = 0.0f; t < Seconds; t += Time.deltaTime)
-        {
-            _ElapsedDelaySconds = t;
-            yield return null;
-        }
-        _ElapsedDelaySconds = 1.1f;
+        yield return new WaitForSeconds(Seconds);
         endcallback();
         _canUse = true;
     }

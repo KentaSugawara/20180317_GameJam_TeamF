@@ -10,14 +10,15 @@ public class atomicBomb : SkillSuperClass {
     {
         if (_canUse)
         {
-            StartCoroutine(Skill());
+            StartCoroutine(skill());
             return true;
         }
         else return false;
     }
 
-    IEnumerator Skill()
+    IEnumerator skill()
     {
+
         var fieldmanager = GetComponent<test_FieldManager>();
         if (_isPlayer1)
         {

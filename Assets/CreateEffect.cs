@@ -18,11 +18,6 @@ public class CreateEffect : MonoBehaviour {
 
     bool expFlag=false;
 
-    void Start()
-    {
-        
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (expFlag) return;
@@ -41,7 +36,7 @@ public class CreateEffect : MonoBehaviour {
         var effect = Instantiate(Effect);
         effect.transform.position = transform.position;
         
-        //爆発範囲をexplosionradius(float)にする
+        //爆発範囲をexprad(float)にする
         var _Effect = Effect.GetComponent<Explosion>();
         _Effect.radius = exprad;
 

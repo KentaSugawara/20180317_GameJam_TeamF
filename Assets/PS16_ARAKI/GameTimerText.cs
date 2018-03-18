@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class GameTimerText : MonoBehaviour
 {
-    [SerializeField]
+    //[SerializeField]
     private float maxTime = 60.0f;
     private float time;
     private Text t;
-
+    private string F = "F1";
     // Use this for initialization
     void Start()
     {
         t = GetComponent<Text>();
         time = maxTime;
-        t.text = time.ToString("F0");
+        t.text = time.ToString(F);
         StartCoroutine(StartTimer());
     }
     IEnumerator StartTimer()
@@ -27,12 +27,12 @@ public class GameTimerText : MonoBehaviour
             if (time <= 0)
             {
                 time = 0;
-                t.text = time.ToString("F0");
+                t.text = time.ToString(F);
                 break;
             }
             else
             {
-                t.text = time.ToString("F0");
+                t.text = time.ToString(F);
             }
         }
     }

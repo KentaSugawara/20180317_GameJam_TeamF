@@ -3,22 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour {
-
     [SerializeField] public float radius;
+
+<<<<<<< HEAD
+    [SerializeField] public int damegehanntei;
+
+
+    // Use this for initialization
+    void Start () {
+        //arrayには爆発に当たっているキャラクターobjの配列が入ってる
+
+
+        StartCoroutine(damegaef(damegehanntei));
+
+=======
 
 	// Use this for initialization
 	void Start () {
+>>>>>>> 3646586eee54c9b3c0d748a45dce882b65e4cf10
         StartCoroutine(Delete());
-        var array = Physics.OverlapSphere(transform.position, radius, 1 << 10);
-        for(int i = 0; i < array.Length; i++)
-        {
-            var charscr = array[i].gameObject.GetComponent<test_Character>();
-            if (charscr != null)
-            {
-                charscr.Damage(1);
-            }
-        }
     }
+
+    IEnumerator damegaef(int frame)
+    {
+        for (int i = 0; i < frame; i++)
+        {
+            var array = Physics.OverlapSphere(transform.position, radius, 1 << 10);
+            for (int f = 0; f < array.Length; f++)
+            {
+                var charscr = array[i].gameObject.GetComponent<test_Character>();
+                if (charscr != null)
+                {
+                    charscr.Damage(1);
+                }
+            }
+            yield return null;
+        }
+        yield return null;
+    }
+
+
 	IEnumerator Delete()
     {
         yield return new WaitForSeconds(5.0f);

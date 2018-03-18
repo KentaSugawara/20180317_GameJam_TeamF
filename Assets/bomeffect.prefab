@@ -460,6 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3.12
+  damegehanntei: 1
 --- !u!114 &114964493978403322
 MonoBehaviour:
   m_ObjectHideFlags: 1
