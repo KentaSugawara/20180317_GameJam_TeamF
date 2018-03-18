@@ -21,6 +21,8 @@ public class SkillSuperClass : MonoBehaviour {
 
     public virtual bool Use()
     {
+
+
         return false;
     }
 
