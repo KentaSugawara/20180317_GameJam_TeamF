@@ -36,6 +36,10 @@ public class BombManager : MonoBehaviour {
     GameObject bombPre1;
     [SerializeField]
     GameObject bombPre2;
+
+    public BombState p1State;
+    public BombState p2State;
+
     private void Start()
     {
         bombMaxValue =  stageWidth/bombWidth;
@@ -133,4 +137,10 @@ public class BombManager : MonoBehaviour {
         }
 
     }
+}
+
+public class BombState
+{
+    public float SpawnDelay;
+    public float ExprosionRange;
 }
