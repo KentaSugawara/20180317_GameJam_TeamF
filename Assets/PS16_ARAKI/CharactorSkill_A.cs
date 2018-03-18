@@ -14,10 +14,10 @@ public class CharactorSkill_A : SkillSuperClass
 
     public override bool Use()
     {
-        if (true)
+        if (_canUse==true)
         {
             playerArea.transform.localScale *= skillMag;
-            StartTimer(callback);
+            StartTimer(EndSkill);
             return true;
         }
         return false;
@@ -30,8 +30,4 @@ public class CharactorSkill_A : SkillSuperClass
     {
         playerArea.transform.localScale /= skillMag;
     }
-    System.Action callback = () =>
-    {
-        //EndSkill();
-    };
 }
