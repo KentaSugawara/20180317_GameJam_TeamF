@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class SkillSuperClass : MonoBehaviour {
     [SerializeField]
-<<<<<<< HEAD
     protected float _UseDelaySeconds;
     public float UseDelaySeconds
     {
         get { return _UseDelaySeconds; }
     }
-=======
-    private float _UseDelaySeconds;
-    
->>>>>>> fed9d0455b05f16d5205955b9a2f0cb262d4fe27
 
     protected bool _canUse = true;
     public bool canUse
@@ -35,14 +30,11 @@ public class SkillSuperClass : MonoBehaviour {
         set { _isPlayer1 = value; }
     }
 
-<<<<<<< HEAD
+
     public virtual bool Use()
     {
         return false;
     }
-=======
-    public virtual bool Use() { return false; }
->>>>>>> fed9d0455b05f16d5205955b9a2f0cb262d4fe27
 
     public void StartTimer(System.Action endcallback)
     {
