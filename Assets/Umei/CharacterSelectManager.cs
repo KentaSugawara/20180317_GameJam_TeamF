@@ -11,10 +11,7 @@ public class CharacterSelectManager : MonoBehaviour
     public Sprite[] charaSprites;
     public Image[]  charaImgs;
     public string[] charaNames;
-    private void Start()
-    {
-        StartCoroutine(GoNext());
-    }
+
     public  void SelectTrigger()
     {
         for (int i=0;i<charaFlames.Length;i++)
@@ -28,17 +25,6 @@ public class CharacterSelectManager : MonoBehaviour
             {
                 charaImgs[i].GetComponent<Animator>().SetBool("RunFlag", false);
             }
-        }
-    }
-    IEnumerator GoNext()
-    {
-        while (true)
-        {
-            if (p1.CharaSelectEnterFlag&&p2.CharaSelectEnterFlag)
-            {
-                
-            }
-            yield return null;
         }
     }
 }

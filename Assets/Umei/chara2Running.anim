@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: chara1Running 1
+  m_Name: chara2Running
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -36,8 +36,19 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings: []
-    pptrCurveMapping: []
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 2015549526
+      script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 21300000, guid: 51a6494b24d6b1c4f8089d492184e667, type: 3}
+    - {fileID: 21300000, guid: aae7b7f629aaee0449fd7e21b77895e4, type: 3}
+    - {fileID: 21300000, guid: 1a949e57aa36a8e4695e28e6fa782f1c, type: 3}
+    - {fileID: 21300000, guid: 7c80928fc57cdcf47b6e4c8a6defafcd, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

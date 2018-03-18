@@ -16,6 +16,10 @@ public class CharacterSelect : MonoBehaviour
     int selectCharaNumber = 0;
     float selectDelay = 0.2f;
     bool charaSelectEnterFlag = false;
+    public bool CharaSelectEnterFlag
+    {
+        get{ return charaSelectEnterFlag; }
+    }
     public int SelectCharaNumber
     {
         get

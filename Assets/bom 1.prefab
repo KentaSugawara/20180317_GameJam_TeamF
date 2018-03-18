@@ -147,6 +147,8 @@ MonoBehaviour:
   exptime: 3
   exptime2: 1.5
   ScaleObject: {fileID: 114342096312801312}
+  _Prefab_Audio_Bomb: {fileID: 1515756681852774, guid: cfc41cb7167b5e64fbd63f5251497117,
+    type: 2}
   exprad: 0
 --- !u!114 &114342096312801312
 MonoBehaviour:
@@ -275,7 +277,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: be4cd3301d0ff1f47816ec16fefa297b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

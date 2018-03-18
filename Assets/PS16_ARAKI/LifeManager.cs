@@ -44,10 +44,10 @@ public class LifeManager : MonoBehaviour
                 Debug.Log(obj.name);
                 damage = false;
             }
-            if(count>=5){
-                count -= 5;
-                PlayerDamageOn();
-            }
+            //if(count>=5){
+            //    count -= 5;
+            //    PlayerDamageOn();
+            //}
             count += Time.deltaTime;
         }
     }
