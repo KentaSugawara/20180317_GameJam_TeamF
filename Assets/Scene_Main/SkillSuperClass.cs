@@ -24,18 +24,19 @@ public class SkillSuperClass : MonoBehaviour {
         return false;
     }
 
-    public void StartTimer()
+    public void StartTimer(System.Action endcallback)
     {
         if (_canUse)
         {
             _canUse = false;
-            StartCoroutine(Routine_Timer(_UseDelaySeconds));
+            StartCoroutine(Routine_Timer(_UseDelaySeconds, endcallback));
         }
     }
 
-    protected IEnumerator Routine_Timer(float Seconds)
+    protected IEnumerator Routine_Timer(float Seconds, System.Action endcallback)
     {
         yield return new WaitForSeconds(Seconds);
+        endcallback();
         _canUse = true;
     }
 }
