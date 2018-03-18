@@ -126,8 +126,11 @@ public class test_Character : MonoBehaviour {
         _inBombMoveDelay = false;
     }
 
+    [SerializeField]
+    private LifeManager _LifeManager;
+
     public void Damage(int value)
     {
-
+        _LifeManager.PlayerDamageOn();
     }
 }
