@@ -13,11 +13,20 @@ public class Main_StartEffect : MonoBehaviour
 
     public IEnumerator Routine_Effect()
     {
-        for (int i = 0; i < _Texts.Count; ++i)
+        for (int i = 0; i < _Texts.Count - 1; ++i)
         {
             _Texts[i].gameObject.SetActive(true);
             yield return new WaitForSeconds(_EffectInterval);
             _Texts[i].gameObject.SetActive(false);
         }
+
+        StartCoroutine(Routine_LastText());
+    }
+
+    private IEnumerator Routine_LastText()
+    {
+        _Texts[_Texts.Count - 1].gameObject.SetActive(true);
+        yield return new WaitForSeconds(_EffectInterval);
+        _Texts[_Texts.Count - 1].gameObject.SetActive(false);
     }
 }

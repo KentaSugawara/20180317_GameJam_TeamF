@@ -19,7 +19,27 @@ public class MainRoutine : MonoBehaviour {
     private List<GameObject> _Chara2InstanceList = new List<GameObject>();
 
     private test_Character _Player1_TargetCharacter;
+    public test_Character Player1_TargetCharacter
+    {
+        get { return _Player1_TargetCharacter; }
+    }
     private test_Character _Player2_TargetCharacter;
+    public test_Character Player2_TargetCharacter
+    {
+        get { return _Player2_TargetCharacter; }
+    }
+
+    [SerializeField]
+    private GameObject _BombManagerObj;
+
+    [SerializeField]
+    private GameTimerText _Timer;
+
+    [SerializeField]
+    private SkillViewer _SkillViewer1;
+
+    [SerializeField]
+    private SkillViewer _SkillViewer2;
 
     private void Awake()
     {
@@ -49,7 +69,21 @@ public class MainRoutine : MonoBehaviour {
         //スタート待機
         yield return StartCoroutine(_StartEffect.Routine_Effect());
 
-        _Player1_TargetCharacter.StartRoutine();
-        _Player2_TargetCharacter.StartRoutine();
+        //スタート処理
+        {
+            //キャラの操作を開始
+            _Player1_TargetCharacter.StartRoutine();
+            _Player2_TargetCharacter.StartRoutine();
+
+            //BombManagerをアクティブに
+            _BombManagerObj.SetActive(true);
+
+            //タイマー開始
+            _Timer.StartMainRoutine();
+
+            _SkillViewer1.Init(_Player1_TargetCharacter.Skill1);
+            _SkillViewer2.Init(_Player2_TargetCharacter.Skill1);
+        }
+
     }
 }

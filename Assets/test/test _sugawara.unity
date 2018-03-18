@@ -151,6 +151,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 1691633980019268, guid: 9e9d04b17d7fc9942a1603fb802ca438, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e9d04b17d7fc9942a1603fb802ca438, type: 2}
   m_IsPrefabParent: 0
@@ -328,9 +332,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 33145665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc84b05af2019eb49bb87c83ce41412e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c18503d7fd1b234bafb1d483b9b3746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Image: {fileID: 33145667}
 --- !u!1 &52563445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,6 +1019,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 1222297804071552, guid: 248915462d9482842a956dda8a64f60a, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212084642461947078, guid: 248915462d9482842a956dda8a64f60a,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 248915462d9482842a956dda8a64f60a, type: 2}
   m_IsPrefabParent: 0
@@ -2264,6 +2278,10 @@ MonoBehaviour:
   - {fileID: 526118946}
   - {fileID: 1191189548}
   - {fileID: 842189188}
+  _BombManagerObj: {fileID: 1421849016}
+  _Timer: {fileID: 2027886963}
+  _SkillViewer1: {fileID: 1049356439}
+  _SkillViewer2: {fileID: 1049356439}
 --- !u!4 &469179139
 Transform:
   m_ObjectHideFlags: 0
@@ -4558,9 +4576,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1049356437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc84b05af2019eb49bb87c83ce41412e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c18503d7fd1b234bafb1d483b9b3746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _Image: {fileID: 1049356440}
 --- !u!114 &1049356440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5649,12 +5668,12 @@ GameObject:
   - component: {fileID: 1421849018}
   - component: {fileID: 1421849017}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: BombManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1421849017
 MonoBehaviour:
   m_ObjectHideFlags: 0

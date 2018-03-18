@@ -11,7 +11,7 @@ public class GameTimerText : MonoBehaviour
     private Text t;
     private string F = "F1";
     // Use this for initialization
-    void Start()
+    public void StartMainRoutine()
     {
         t = GetComponent<Text>();
         time = maxTime;

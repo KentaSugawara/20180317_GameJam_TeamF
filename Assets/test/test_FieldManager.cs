@@ -91,7 +91,13 @@ public class test_FieldManager : MonoBehaviour {
             filed = _Field1;
             target.exprad = _BombScaleToField1;
         }
-        target.transform.SetParent(filed, false);
+        target.exptime2 += 1.0f;
+        
         Instantiate(_Prefab_Audio_MoveBomb);
+    }
+
+    private IEnumerator Routine_MoveBomb(CreateEffect target, Transform filed)
+    {
+        target.transform.SetParent(filed, false);
     }
 }

@@ -7,9 +7,9 @@ public class CreateEffect : MonoBehaviour {
     // Use this for initialization
     [SerializeField] GameObject Effect;
     //接地から爆発までの時間
-    [SerializeField] float exptime=3;
+    [SerializeField] public float exptime=3;
 
-    [SerializeField] float exptime2 = 1.5f;
+    [SerializeField] public float exptime2 = 1.5f;
 
     [SerializeField] ScaleObject ScaleObject;
 
