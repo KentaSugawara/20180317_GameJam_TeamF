@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour {
-    [SerializeField] public float radius;
 
+    [SerializeField] public float radius;
 
 	// Use this for initialization
 	void Start () {

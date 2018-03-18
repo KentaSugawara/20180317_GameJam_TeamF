@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkillSuperClass : MonoBehaviour {
     [SerializeField]
     private float _UseDelaySeconds;
+    
 
     protected bool _canUse;
     public bool canUse
@@ -27,12 +28,7 @@ public class SkillSuperClass : MonoBehaviour {
         set { _isPlayer1 = value; }
     }
 
-    public virtual bool Use()
-    {
-
-
-        return false;
-    }
+    public virtual bool Use() { return false; }
 
     public void StartTimer(System.Action endcallback)
     {
