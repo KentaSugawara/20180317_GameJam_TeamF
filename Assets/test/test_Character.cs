@@ -45,6 +45,9 @@ public class test_Character : MonoBehaviour {
     [SerializeField]
     private bool _isField1 = true;
 
+    [SerializeField]
+    private float _Gravity;
+
     private bool _isRun;
     private bool _inBombMoveDelay = false;
 
@@ -90,11 +93,19 @@ public class test_Character : MonoBehaviour {
                 _Animator.SetBool(hash_isRun, false);
             }
 
-            
-            if (_isGrounded.isGrounded && Input.GetButtonDown(_InputName_Jump))
+            //接地
+            if (_isGrounded.isGrounded)
             {
-                Debug.Log(_InputName_Jump);
-                _Rigidbody.AddForce(Vector3.up * _JumpPower, ForceMode.Impulse);
+                if (Input.GetButtonDown(_InputName_Jump))
+                {
+                    Debug.Log(_InputName_Jump);
+                    _Rigidbody.AddForce(Vector3.up * _JumpPower, ForceMode.Impulse);
+                }
+            }
+            else
+            {
+                //重力
+                _Rigidbody.AddForce(Vector3.down * _Gravity, ForceMode.Force);
             }
 
             if (!_inBombMoveDelay)

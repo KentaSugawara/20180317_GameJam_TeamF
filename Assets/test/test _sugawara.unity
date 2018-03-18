@@ -1207,7 +1207,7 @@ MonoBehaviour:
   _InputName_Jump: GamePad2_Jump
   _InputName_MoveBomb: GamePad2_MoveBomb
   _MoveSpeed: 10
-  _JumpPower: 1000
+  _JumpPower: 3000
   _Rigidbody: {fileID: 526118949}
   _Animator: {fileID: 1909114349}
   _SpriteRender: {fileID: 1909114348}
@@ -1216,6 +1216,7 @@ MonoBehaviour:
   _BombMoveDelaySeconds: 0
   _BombArea: {fileID: 995531193}
   _isField1: 0
+  _Gravity: 5000
   _LifeManager: {fileID: 110113968}
 --- !u!54 &526118949
 Rigidbody:
@@ -2989,7 +2990,7 @@ MonoBehaviour:
   _InputName_Jump: GamePad1_Jump
   _InputName_MoveBomb: GamePad1_MoveBomb
   _MoveSpeed: 10
-  _JumpPower: 1000
+  _JumpPower: 3000
   _Rigidbody: {fileID: 1772724002}
   _Animator: {fileID: 254587163}
   _SpriteRender: {fileID: 254587162}
@@ -2998,6 +2999,7 @@ MonoBehaviour:
   _BombMoveDelaySeconds: 0
   _BombArea: {fileID: 979722506}
   _isField1: 1
+  _Gravity: 5000
   _LifeManager: {fileID: 1341091000}
 --- !u!54 &1772724002
 Rigidbody:
@@ -3009,7 +3011,7 @@ Rigidbody:
   m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
