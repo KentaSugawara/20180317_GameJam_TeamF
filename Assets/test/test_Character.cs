@@ -16,6 +16,12 @@ public class test_Character : MonoBehaviour {
     private string _InputName_MoveBomb;
 
     [SerializeField]
+    private string _InputName_Skill1;
+
+    [SerializeField]
+    private string _InputName_Skill2;
+
+    [SerializeField]
     private float _MoveSpeed;
 
     [SerializeField]
@@ -48,7 +54,6 @@ public class test_Character : MonoBehaviour {
     [SerializeField]
     private float _Gravity;
 
-<<<<<<< HEAD
     [SerializeField]
     private Collider _Collider;
 
@@ -60,8 +65,6 @@ public class test_Character : MonoBehaviour {
         set { _Skill = value; }
     }
 
-=======
->>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
     private bool _isRun;
     private bool _inBombMoveDelay = false;
 
@@ -145,7 +148,6 @@ public class test_Character : MonoBehaviour {
                 }
             }
 
-<<<<<<< HEAD
             if (Input.GetButtonDown(_InputName_Skill1))
             {
                 Debug.Log("UseSkillllll");
@@ -154,8 +156,6 @@ public class test_Character : MonoBehaviour {
 
             v.x = 0.0f;
             _Rigidbody.velocity = v;
-=======
->>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
             _Rigidbody.position = pos;
             yield return null;
         }

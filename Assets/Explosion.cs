@@ -4,23 +4,13 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour {
     [SerializeField] public float radius;
-
-<<<<<<< HEAD
     [SerializeField] public int damegehanntei;
 
 
     // Use this for initialization
     void Start () {
         //arrayには爆発に当たっているキャラクターobjの配列が入ってる
-
-
         StartCoroutine(damegaef(damegehanntei));
-
-=======
-
-	// Use this for initialization
-	void Start () {
->>>>>>> 3646586eee54c9b3c0d748a45dce882b65e4cf10
         StartCoroutine(Delete());
     }
 
