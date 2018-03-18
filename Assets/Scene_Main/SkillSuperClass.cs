@@ -19,6 +19,14 @@ public class SkillSuperClass : MonoBehaviour {
         set { _RemainingDelaySconds = value; }
     }
 
+    [SerializeField]
+    protected bool _isPlayer1;
+    public bool isPlayer1
+    {
+        get { return _isPlayer1; }
+        set { _isPlayer1 = value; }
+    }
+
     public virtual bool Use()
     {
 
