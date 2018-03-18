@@ -12,6 +12,12 @@ public class SkillSuperClass : MonoBehaviour {
         get { return _canUse; }
     }
 
+    protected float _ElapsedDelaySconds;
+    public float ElapsedDelaySconds
+    {
+        get { return _ElapsedDelaySconds; }
+    }
+
     protected float _RemainingDelaySconds;
     public float RemainingDelaySconds
     {
@@ -29,8 +35,6 @@ public class SkillSuperClass : MonoBehaviour {
 
     public virtual bool Use()
     {
-
-
         return false;
     }
 
@@ -45,7 +49,12 @@ public class SkillSuperClass : MonoBehaviour {
 
     protected IEnumerator Routine_Timer(float Seconds, System.Action endcallback)
     {
-        yield return new WaitForSeconds(Seconds);
+        _ElapsedDelaySconds = 0.0f;
+        for (float t = 0.0f; t < Seconds; t += Time.deltaTime)
+        {
+            _ElapsedDelaySconds = t;
+            yield return null;
+        }
         endcallback();
         _canUse = true;
     }

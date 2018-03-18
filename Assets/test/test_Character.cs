@@ -16,6 +16,12 @@ public class test_Character : MonoBehaviour {
     private string _InputName_MoveBomb;
 
     [SerializeField]
+    private string _InputName_Skill1;
+
+    [SerializeField]
+    private string _InputName_Skill2;
+
+    [SerializeField]
     private float _MoveSpeed;
 
     [SerializeField]
@@ -47,6 +53,13 @@ public class test_Character : MonoBehaviour {
 
     [SerializeField]
     private float _Gravity;
+
+    [SerializeField]
+    private SkillSuperClass _Skill;
+    public SkillSuperClass Skill
+    {
+        get { return _Skill; }
+    }
 
     private bool _isRun;
     private bool _inBombMoveDelay = false;
@@ -120,6 +133,11 @@ public class test_Character : MonoBehaviour {
                         StartCoroutine(Routine_Delay());
                     }
                 }
+            }
+
+            if (Input.GetButtonDown(_InputName_Skill1))
+            {
+                _Skill.Use();
             }
 
             _Rigidbody.position = pos;
