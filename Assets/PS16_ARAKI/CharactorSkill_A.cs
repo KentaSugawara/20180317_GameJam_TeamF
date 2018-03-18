@@ -8,15 +8,30 @@ public class CharactorSkill_A : SkillSuperClass
     private GameObject playerArea;
     [SerializeField]
     private float skillMag;//magnification
+    [SerializeField]
+    private float skillTimer;
+
 
     public override bool Use()
     {
         if (true)
         {
             playerArea.transform.localScale *= skillMag;
-            StartTimer();
+            StartTimer(callback);
             return true;
         }
         return false;
     }
+    private IEnumerator Routine_endSkill(){
+        yield return new WaitForSeconds(skillTimer);
+        playerArea.transform.localScale /= skillMag;
+    }
+    public void EndSkill()
+    {
+        playerArea.transform.localScale /= skillMag;
+    }
+    System.Action callback = () =>
+    {
+        //EndSkill();
+    };
 }
