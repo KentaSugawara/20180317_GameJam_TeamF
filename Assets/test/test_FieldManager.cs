@@ -99,5 +99,6 @@ public class test_FieldManager : MonoBehaviour {
     private IEnumerator Routine_MoveBomb(CreateEffect target, Transform filed)
     {
         target.transform.SetParent(filed, false);
+        yield return null;
     }
 }
