@@ -15,8 +15,6 @@ public class test_FieldManager : MonoBehaviour {
 
     [SerializeField]
     public float _BombScaleToField2;
-<<<<<<< HEAD
-=======
 
     [SerializeField]
     private test_Character _Character_1;
@@ -60,7 +58,6 @@ public class test_FieldManager : MonoBehaviour {
             col.enabled = value;
         }
     }
->>>>>>> f5a2568fb3f859ff15216da3d4da07625c4f23fe
 
     //public void MoveObject(Transform target, bool ToField2)
     //{

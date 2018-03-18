@@ -5,23 +5,17 @@ using UnityEngine;
 public class Explosion : MonoBehaviour {
     //爆発(あたり判定)範囲
     [SerializeField] public float radius;
-<<<<<<< HEAD
     //この変数いじればダメージ判定のあるフレーム数をいじれる↓
-=======
->>>>>>> f5a2568fb3f859ff15216da3d4da07625c4f23fe
     [SerializeField] public int damegehanntei;
 
 
     // Use this for initialization
     void Start () {
-<<<<<<< HEAD
 
         StartCoroutine(damegaef(damegehanntei));
 
-=======
         //arrayには爆発に当たっているキャラクターobjの配列が入ってる
         StartCoroutine(damegaef(damegehanntei));
->>>>>>> f5a2568fb3f859ff15216da3d4da07625c4f23fe
         StartCoroutine(Delete());
     }
     //何フレーム分ダメージ判定を付けるか

@@ -6,9 +6,9 @@ public class TitleManager : MonoBehaviour {
     Pushbotton txt;
 
     [SerializeField] float tim;
-	
+    [SerializeField] MoveScene aaaa;
     // Use this for initialization
-	void Start () {
+    void Start () {
         txt=GetComponentInChildren<Pushbotton>();
         StartCoroutine(mainloop());
         txt.colchange();
@@ -18,14 +18,11 @@ public class TitleManager : MonoBehaviour {
     {
         while (true)
         {
-            if (Input.GetKey(KeyCode.A))
+
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 txt.push();
-                yield return new WaitForSeconds(tim);
-                //---シーンを移動するのを書けばほぼ終わり----------
-
-
-            　　//-----------------------------------------------
+                aaaa.NextScene();
             }
 
 
