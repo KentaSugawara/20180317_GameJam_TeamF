@@ -13,7 +13,7 @@ public class Skill_BombDelayUp : SkillSuperClass
     float effectTime;
     public override bool Use()
     {
-        if (!bManager) return false;
+        if (!bManager||!canUse) return false;
         StartCoroutine(BombDelayChange());
         return true;
     }

@@ -30,6 +30,7 @@ public class BombManager : MonoBehaviour {
     [SerializeField]
     float p2DefaultSpwanDelay;
     public float popMaxHeight=10.0f;
+    CharacterArmy preBombArmy;
     //タイマー
     float p1CountTimer=0;
     float p2CountTimer=0;
@@ -39,6 +40,12 @@ public class BombManager : MonoBehaviour {
     [SerializeField]
     GameObject bombPre2;
 
+    bool P1CanPop() {
+        return (p1CountTimer >= p1State.SpawnDelay);
+    }
+    bool P2CanPop() {
+        return (p2CountTimer >= p2State.SpawnDelay);
+    }
     public BombState p1State;
     public BombState p2State;
 
@@ -64,16 +71,36 @@ public class BombManager : MonoBehaviour {
             //timerのカウントを進める
             p1CountTimer += Time.deltaTime;
             p2CountTimer += Time.deltaTime;
-            //timerが規定のタイムを超えていたら爆弾をポップ
-            if (p1CountTimer>=p1State.SpawnDelay)
+            //timerが規定のタイムを超えていたら爆弾をポップ。どっちもpopする場合は優先度を変える。
+            if (P1CanPop() && P2CanPop()&&preBombArmy==CharacterArmy.P1)
             {
-                BombPopUp(CharacterArmy.P1);
-                p1CountTimer = 0;
+                if (P2CanPop())
+                {
+                    BombPopUp(CharacterArmy.P2);
+                    preBombArmy = CharacterArmy.P2;
+                    p2CountTimer = 0;
+                }
+                if (P1CanPop())
+                {
+                    BombPopUp(CharacterArmy.P1);
+                    preBombArmy = CharacterArmy.P1;
+                    p1CountTimer = 0;
+                }
             }
-            if (p2CountTimer>=p2State.SpawnDelay)
+            else
             {
-                BombPopUp(CharacterArmy.P2);
-                p2CountTimer = 0;
+                if (P1CanPop())
+                {
+                    BombPopUp(CharacterArmy.P1);
+                    preBombArmy = CharacterArmy.P1;
+                    p1CountTimer = 0;
+                }
+                if (P2CanPop())
+                {
+                    BombPopUp(CharacterArmy.P2);
+                    preBombArmy = CharacterArmy.P2;
+                    p2CountTimer = 0;
+                }
             }
             yield return null;
         }
