@@ -13,6 +13,11 @@ public class LifeManager : MonoBehaviour
     private int nowDamage = 0;
     private float count = 0;
 
+    public bool isDead
+    {
+        get { return nowDamage >= maxLife; }
+    }
+
     public void PlayerDamageOn()
     {
         damage = true;
@@ -37,10 +42,10 @@ public class LifeManager : MonoBehaviour
                 GameObject obj = transform.GetChild(nowDamage).gameObject;
                 obj.active = false;
                 ++nowDamage;
-                if (nowDamage == maxLife)
-                {
-                    nowDamage = maxLife - 1;
-                }
+                //if (nowDamage == maxLife)
+                //{
+                //    nowDamage = maxLife - 1;
+                //}
                 Debug.Log(obj.name);
                 damage = false;
             }

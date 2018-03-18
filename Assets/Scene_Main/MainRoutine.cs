@@ -41,6 +41,15 @@ public class MainRoutine : MonoBehaviour {
     [SerializeField]
     private SkillViewer _SkillViewer2;
 
+    [SerializeField]
+    private AudioSource _BGM;
+
+    [SerializeField]
+    private LifeManager _LifeManager1;
+
+    [SerializeField]
+    private LifeManager _LifeManager2;
+
     private void Awake()
     {
         foreach (var chara in _Chara1InstanceList)
@@ -69,6 +78,8 @@ public class MainRoutine : MonoBehaviour {
         //スタート待機
         yield return StartCoroutine(_StartEffect.Routine_Effect());
 
+        _BGM.Play();
+
         //スタート処理
         {
             //キャラの操作を開始
@@ -85,5 +96,55 @@ public class MainRoutine : MonoBehaviour {
             _SkillViewer2.Init(_Player2_TargetCharacter.Skill);
         }
 
+        while (true)
+        {
+            if (_Timer.time < 0.0f)
+            {
+                StartCoroutine(Routine_TimeUp());
+                yield break;
+            }
+
+            if (_LifeManager1.isDead)
+            {
+                StartCoroutine(Routine_Win_2());
+                yield break;
+            }
+            else if (_LifeManager2.isDead)
+            {
+                StartCoroutine(Routine_Win_1());
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    [SerializeField]
+    private GameObject _TimeUp;
+    private IEnumerator Routine_TimeUp()
+    {
+        _TimeUp.SetActive(true);
+
+        //シーン遷移
+        yield break;
+    }
+
+    [SerializeField]
+    private GameObject _Win_1;
+    private IEnumerator Routine_Win_1()
+    {
+        _Win_1.SetActive(true);
+
+        //シーン遷移
+        yield break;
+    }
+
+    [SerializeField]
+    private GameObject _Win_2;
+    private IEnumerator Routine_Win_2()
+    {
+        _Win_2.SetActive(true);
+
+        //シーン遷移
+        yield break;
     }
 }

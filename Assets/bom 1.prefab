@@ -151,7 +151,7 @@ MonoBehaviour:
     type: 2}
   _isMoving: 0
   _SpriteObj: {fileID: 1961203709975496}
-  exprad: 0
+  exprad: 2
 --- !u!114 &114342096312801312
 MonoBehaviour:
   m_ObjectHideFlags: 1

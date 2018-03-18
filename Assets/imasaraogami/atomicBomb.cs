@@ -6,27 +6,33 @@ public class atomicBomb : SkillSuperClass {
     [SerializeField]
     public float range = 2;
 
+    [SerializeField]
+    private test_FieldManager _FieldManager;
+
     public override bool Use()
     {
         if (_canUse)
         {
+            StartTimer(dummy);
             StartCoroutine(skill());
             return true;
         }
         else return false;
     }
 
+    private void dummy() { }
+
     IEnumerator skill()
     {
 
-        var fieldmanager = GetComponent<test_FieldManager>();
+        //var fieldmanager = GetComponent<test_FieldManager>();
         if (_isPlayer1)
         {
-            fieldmanager._BombScaleToField2 = range;
+            _FieldManager._BombScaleToField2 = range;
         }
         else
         {
-            fieldmanager._BombScaleToField1 = range;
+            _FieldManager._BombScaleToField1 = range;
         }
         yield return null;
     }

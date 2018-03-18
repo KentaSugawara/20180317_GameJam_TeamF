@@ -7,7 +7,7 @@ public class GameTimerText : MonoBehaviour
 {
     //[SerializeField]
     private float maxTime = 60.0f;
-    private float time;
+    public float time;
     private Text t;
     private string F = "F1";
     // Use this for initialization

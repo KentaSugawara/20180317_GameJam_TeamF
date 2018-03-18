@@ -40,7 +40,8 @@ public class OnDamageEffect : MonoBehaviour {
             }
             else
             {
-                float e = _ReminingSeconds / _EffectSeconds;
+                _ReminingSeconds -= Time.deltaTime;
+                float e = 1.0f - _ReminingSeconds / _EffectSeconds;
                 b1 = Mathf.Lerp(_StartAlpha, _EffectBezier, e);
                 b2 = Mathf.Lerp(_EffectBezier, 0.0f, e);
                 color.a = Mathf.Lerp(b1, b2, e);
