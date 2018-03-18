@@ -137,12 +137,14 @@ public class BombManager : MonoBehaviour {
         {
             p = Stage1.transform;
             var b = Instantiate(bombPre1, _pos, Quaternion.identity, p);
+            if (b.GetComponent<CreateEffect>()) b.GetComponent<CreateEffect>().exprad = p1State.ExprosionRange;
             bombs[bombArrayNumber] = b;
         }
         if (_attr == CharacterArmy.P2)
         {
             p = Stage2.transform;
             var b = Instantiate(bombPre2, _pos, Quaternion.identity, p);
+            if (b.GetComponent<CreateEffect>()) b.GetComponent<CreateEffect>().exprad = p2State.ExprosionRange;
             bombs[bombArrayNumber] = b;
         }
 
