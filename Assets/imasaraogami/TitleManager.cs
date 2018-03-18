@@ -19,7 +19,7 @@ public class TitleManager : MonoBehaviour {
         while (true)
         {
 
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetButtonDown("Submit"))
             {
                 txt.push();
                 aaaa.NextScene();

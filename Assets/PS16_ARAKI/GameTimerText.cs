@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameTimerText : MonoBehaviour
 {
     //[SerializeField]
-    private float maxTime = 60.0f;
+    public float maxTime = 60.0f;
     public float time;
     private Text t;
     private string F = "F1";

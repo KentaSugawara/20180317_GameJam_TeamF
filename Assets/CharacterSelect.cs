@@ -11,10 +11,15 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] GameObject selectFlame;
     [SerializeField] Image CharaImgPanel;
     [SerializeField] GameObject selectedImage;
-    [SerializeField] Text _text; 
+    [SerializeField] Text skillText;
+    [SerializeField] Text charaText;
     int selectCharaNumber = 0;
     float selectDelay = 0.2f;
     bool charaSelectEnterFlag = false;
+    public bool CharaSelectEnterFlag
+    {
+        get{ return charaSelectEnterFlag; }
+    }
     public int SelectCharaNumber
     {
         get
@@ -33,7 +38,9 @@ public class CharacterSelect : MonoBehaviour
     void ChageTrigger()
     {
         CharaImgPanel.sprite = characterSelectManager.charaSprites[selectCharaNumber];
-        _text.text =characterSelectManager.skillNames[selectCharaNumber];
+        skillText.text =characterSelectManager.skillNames[selectCharaNumber];
+        charaText.text = characterSelectManager.charaNames[selectCharaNumber];
+        characterSelectManager.SelectTrigger();
     }
     IEnumerator CharaSelectMove()
     {

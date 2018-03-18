@@ -142,5 +142,7 @@ public class test_FieldManager : MonoBehaviour {
 
         if (target) target.SpriteObj.transform.localScale = Scale;
         if (target) target._isMoving = false;
+        target.transform.SetParent(filed, false);
+        yield return null;
     }
 }

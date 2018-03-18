@@ -10,11 +10,21 @@ public class CharacterSelectManager : MonoBehaviour
     public GameObject[] charaFlames;
     public Sprite[] charaSprites;
     public Image[]  charaImgs;
-    private void Awake()
+    public string[] charaNames;
+
+    public  void SelectTrigger()
     {
-        for (int i=0;i<charaImgs.Length;i++)
+        for (int i=0;i<charaFlames.Length;i++)
         {
-            charaImgs[i].sprite = charaSprites[i];
+            //どちらかにセレクトされていたら
+            if (p1.SelectCharaNumber==i||p2.SelectCharaNumber==i)
+            {
+                charaImgs[i].GetComponent<Animator>().SetBool("RunFlag",true);
+            }
+            else
+            {
+                charaImgs[i].GetComponent<Animator>().SetBool("RunFlag", false);
+            }
         }
     }
 }

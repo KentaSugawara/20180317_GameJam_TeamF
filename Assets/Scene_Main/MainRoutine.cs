@@ -56,6 +56,10 @@ public class MainRoutine : MonoBehaviour {
         {
             chara.SetActive(false);
         }
+        var chara1 = CharacterTypeData.p1CharaNumber;
+        if (chara1 == CharaData.type1) _CharaIndex1 = 0;
+        else if (chara1 == CharaData.type2) _CharaIndex1 = 1;
+        else if (chara1 == CharaData.type3) _CharaIndex1 = 2;
         _Chara1InstanceList[_CharaIndex1].SetActive(true);
         _Player1_TargetCharacter = _Chara1InstanceList[_CharaIndex1].GetComponent<test_Character>();
 
@@ -63,6 +67,10 @@ public class MainRoutine : MonoBehaviour {
         {
             chara.SetActive(false);
         }
+        var chara2 = CharacterTypeData.p2CharaNumber;
+        if (chara2 == CharaData.type1) _CharaIndex2 = 0;
+        else if (chara2 == CharaData.type2) _CharaIndex2 = 1;
+        else if (chara2 == CharaData.type3) _CharaIndex2 = 2;
         _Chara2InstanceList[_CharaIndex2].SetActive(true);
         _Player2_TargetCharacter = _Chara2InstanceList[_CharaIndex2].GetComponent<test_Character>();
     }
@@ -74,7 +82,7 @@ public class MainRoutine : MonoBehaviour {
 
     private IEnumerator Routine_Main()
     {
-
+        yield return new WaitForSeconds(1.5f);
         //スタート待機
         yield return StartCoroutine(_StartEffect.Routine_Effect());
 
@@ -98,7 +106,7 @@ public class MainRoutine : MonoBehaviour {
 
         while (true)
         {
-            if (_Timer.time < 0.0f)
+            if (_Timer.time <= 0.1f)
             {
                 StartCoroutine(Routine_TimeUp());
                 yield break;
@@ -124,6 +132,9 @@ public class MainRoutine : MonoBehaviour {
     {
         _TimeUp.SetActive(true);
 
+        yield return new WaitForSeconds(5);
+        _MoveScene.NextScene();
+
         //シーン遷移
         yield break;
     }
@@ -133,6 +144,9 @@ public class MainRoutine : MonoBehaviour {
     private IEnumerator Routine_Win_1()
     {
         _Win_1.SetActive(true);
+
+        yield return new WaitForSeconds(5);
+        _MoveScene.NextScene();
 
         //シーン遷移
         yield break;
@@ -144,7 +158,13 @@ public class MainRoutine : MonoBehaviour {
     {
         _Win_2.SetActive(true);
 
+        yield return new WaitForSeconds(5);
+        _MoveScene.NextScene();
+
         //シーン遷移
         yield break;
     }
+
+    [SerializeField]
+    private MoveScene _MoveScene;
 }

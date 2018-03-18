@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/imasaraogami/title.unity
+    guid: e07e34857a13da14a94b120a8f781798
+  - enabled: 1
+    path: Assets/Umei/SelectScene.unity
+    guid: 64b8e30a02d3d3649938e78d5f9e296e
+  - enabled: 1
+    path: Assets/test/test _sugawara.unity
+    guid: 4b22c11f5a5e3104ba6fcdb7b690331a
