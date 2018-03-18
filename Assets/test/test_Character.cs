@@ -16,6 +16,12 @@ public class test_Character : MonoBehaviour {
     private string _InputName_MoveBomb;
 
     [SerializeField]
+    private string _InputName_Skill1;
+
+    [SerializeField]
+    private string _InputName_Skill2;
+
+    [SerializeField]
     private float _MoveSpeed;
 
     [SerializeField]
@@ -48,11 +54,23 @@ public class test_Character : MonoBehaviour {
     [SerializeField]
     private float _Gravity;
 
+    [SerializeField]
+    private Collider _Collider;
+
+    [SerializeField]
+    private SkillSuperClass _Skill;
+    public SkillSuperClass Skill
+    {
+        get { return _Skill; }
+        set { _Skill = value; }
+    }
+
     private bool _isRun;
     private bool _inBombMoveDelay = false;
 
     private int hash_isRun = Animator.StringToHash("isRun");
     private int hash_isLeft = Animator.StringToHash("isLeft");
+    private int hash_isJump = Animator.StringToHash("isJump");
 
     // Use this for initialization
     void Start () {
@@ -63,12 +81,14 @@ public class test_Character : MonoBehaviour {
         }
         _isRun = false;
         StartCoroutine(Routine_Main());
+        //StartCoroutine(Routine_FixedMain());
 	}
 	
     private IEnumerator Routine_Main()
     {
         while (true)
         {
+            var v = _Rigidbody.velocity;
             var pos = transform.position;
             float h = Input.GetAxisRaw(_InputName_MoveH);
             pos.x += h * _MoveSpeed * Time.deltaTime;
@@ -96,6 +116,8 @@ public class test_Character : MonoBehaviour {
             //接地
             if (_isGrounded.isGrounded)
             {
+                v.y = 0.0f;
+                _Animator.SetBool(hash_isJump, false);
                 if (Input.GetButtonDown(_InputName_Jump))
                 {
                     Debug.Log(_InputName_Jump);
@@ -106,6 +128,7 @@ public class test_Character : MonoBehaviour {
             {
                 //重力
                 _Rigidbody.AddForce(Vector3.down * _Gravity, ForceMode.Force);
+                _Animator.SetBool(hash_isJump, true);
             }
 
             if (!_inBombMoveDelay)
@@ -116,14 +139,46 @@ public class test_Character : MonoBehaviour {
                     if (target != null)
                     {
                         Debug.Log("Move!");
-                        _FieldManager.MoveBomb(target, _isField1);
+                        foreach (var bomb in target)
+                        {
+                            _FieldManager.MoveBomb(bomb, _isField1);
+                        }
                         StartCoroutine(Routine_Delay());
                     }
                 }
             }
 
+            if (Input.GetButtonDown(_InputName_Skill1))
+            {
+                Debug.Log("UseSkillllll");
+                _Skill.Use();
+            }
+
+            v.x = 0.0f;
+            _Rigidbody.velocity = v;
             _Rigidbody.position = pos;
             yield return null;
+        }
+    }
+
+    public bool isUpperVector()
+    {
+        return _Rigidbody.velocity.y > 0;
+    }
+
+    private IEnumerator Routine_FixedMain()
+    {
+        while (true)
+        {
+            if (_Rigidbody.velocity.y > 0)
+            {
+                _Collider.enabled = false;
+            }
+            else
+            {
+                _Collider.enabled = true;
+            }
+            yield return new WaitForFixedUpdate();
         }
     }
 
