@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombManager : MonoBehaviour {
+public class BombManager : MonoBehaviour
+{
     int bombMaxValue;
     //爆弾の配列(ポジションが被らないように)
     GameObject[] bombs;
-    enum CharacterAttr{
-        P1,P2
+    enum CharacterArmy
+    {
+        P1, P2
     }
     const int NONE = -1;
     //爆弾の横幅
@@ -27,21 +29,23 @@ public class BombManager : MonoBehaviour {
     //爆弾の出るタイム
     public float p1Time;
     public float p2Time;
-    public float popMaxHeight=10.0f;
+    public float popMaxHeight = 10.0f;
     CharacterArmy preBombArmy;
     //タイマー
-    float p1CountTimer=0;
-    float p2CountTimer=0;
+    float p1CountTimer = 0;
+    float p2CountTimer = 0;
     //爆弾のprefab
     [SerializeField]
     GameObject bombPre1;
     [SerializeField]
     GameObject bombPre2;
 
-    bool P1CanPop() {
+    bool P1CanPop()
+    {
         return (p1CountTimer >= p1State.SpawnDelay);
     }
-    bool P2CanPop() {
+    bool P2CanPop()
+    {
         return (p2CountTimer >= p2State.SpawnDelay);
     }
     public BombState p1State;
@@ -49,7 +53,7 @@ public class BombManager : MonoBehaviour {
 
     private void Start()
     {
-        bombMaxValue =  stageWidth/bombWidth;
+        bombMaxValue = stageWidth / bombWidth;
         bombs = new GameObject[bombMaxValue];
         //カメラからステージの左上を求めるz座標だけはステージ座標
         StartCoroutine(BombUpdate());
@@ -61,9 +65,9 @@ public class BombManager : MonoBehaviour {
             //timerのカウントを進める
             p1CountTimer += Time.deltaTime;
             p2CountTimer += Time.deltaTime;
-<<<<<<< HEAD
+
             //timerが規定のタイムを超えていたら爆弾をポップ。どっちもpopする場合は優先度を変える。
-            if (P1CanPop() && P2CanPop()&&preBombArmy==CharacterArmy.P1)
+            if (P1CanPop() && P2CanPop() && preBombArmy == CharacterArmy.P1)
             {
                 if (P2CanPop())
                 {
@@ -92,64 +96,63 @@ public class BombManager : MonoBehaviour {
                     preBombArmy = CharacterArmy.P2;
                     p2CountTimer = 0;
                 }
-=======
-            //timerが規定のタイムを超えていたら爆弾をポップ
-            if (p1CountTimer>=p1Time)
-            {
-                BombPopUp(CharacterAttr.P1);
-                p1CountTimer = 0;
+                //timerが規定のタイムを超えていたら爆弾をポップ
+                if (p1CountTimer >= p1Time)
+                {
+                    BombPopUp(CharacterArmy.P1);
+                    p1CountTimer = 0;
+                }
+                if (p2CountTimer >= p2Time)
+                {
+                    BombPopUp(CharacterArmy.P2);
+                    p2CountTimer = 0;
+                }
+                yield return null;
             }
-            if (p2CountTimer>=p2Time)
-            {
-                BombPopUp(CharacterAttr.P2);
-                p2CountTimer = 0;
->>>>>>> c509cee5c9a396366d5c6cb703a0b9b734a1f4da
-            }
-            yield return null;
         }
     }
     //popに成功したらtrueを返す
-    bool BombPopUp(CharacterAttr _attr)
+    bool BombPopUp(CharacterArmy _attr)
     {
         int num = GetPopSpaceNum();
-        if (num==NONE)
+        if (num == NONE)
         {
             return false;
         }
         else
         {
-            Vector3 startVec=Vector3.zero;
-            if (_attr==CharacterAttr.P2)
+            Vector3 startVec = Vector3.zero;
+            if (_attr == CharacterArmy.P2)
             {
                 startVec = p2topLeft;
             }
-            if (_attr == CharacterAttr.P1)
+            if (_attr == CharacterArmy.P1)
             {
                 startVec = p1topLeft;
             }
             Vector3 popVec = startVec;
             popVec.x += bombWidth * num;
-            popVec.y -= Random.Range(0,popMaxHeight);
-            BombPop(popVec, num,_attr);
+            popVec.y -= Random.Range(0, popMaxHeight);
+            BombPop(popVec, num, _attr);
             return true;
         }
-      
+
     }
     //0~bombmaxvalueまでのポップ出来るランダムな数字を返す。無い場合は-1を返す
     int GetPopSpaceNum()
     {
-        List<int> bombNumbers=new List<int>();
-        int n=0;
+        List<int> bombNumbers = new List<int>();
+        int n = 0;
         foreach (var i in bombs)
         {
-            if (i==null)
+            if (i == null)
             {
                 bombNumbers.Add(n);
             }
             n++;
         }
-        int num=Random.Range(0,bombNumbers.Count-1);
-        if (bombNumbers.Count==0)
+        int num = Random.Range(0, bombNumbers.Count - 1);
+        if (bombNumbers.Count == 0)
         {
             return NONE;
         }
@@ -157,19 +160,19 @@ public class BombManager : MonoBehaviour {
         {
             return bombNumbers[num];
         }
-        
+
     }
     //引数の場所に爆弾をinstansiateし、引数の番号に入れる
-    void BombPop(Vector3 _pos,int bombArrayNumber, CharacterAttr _attr)
+    void BombPop(Vector3 _pos, int bombArrayNumber, CharacterArmy _attr)
     {
-        Transform p=null;
-        if (_attr == CharacterAttr.P1)
+        Transform p = null;
+        if (_attr == CharacterArmy.P1)
         {
             p = Stage1.transform;
             var b = Instantiate(bombPre1, _pos, Quaternion.identity, p);
             bombs[bombArrayNumber] = b;
         }
-        if (_attr == CharacterAttr.P2)
+        if (_attr == CharacterArmy.P2)
         {
             p = Stage2.transform;
             var b = Instantiate(bombPre2, _pos, Quaternion.identity, p);
