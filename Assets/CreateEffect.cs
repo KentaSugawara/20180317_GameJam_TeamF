@@ -7,11 +7,14 @@ public class CreateEffect : MonoBehaviour {
     // Use this for initialization
     [SerializeField] GameObject Effect;
     //接地から爆発までの時間
-    [SerializeField] float exptime=3;
+    [SerializeField] public float exptime=3;
 
-    [SerializeField] float exptime2 = 1.5f;
+    [SerializeField] public float exptime2 = 1.5f;
 
     [SerializeField] ScaleObject ScaleObject;
+
+    [SerializeField]
+    private GameObject _Prefab_Audio_Bomb;
 
     //爆発範囲設定用
     public float exprad;
@@ -40,6 +43,7 @@ public class CreateEffect : MonoBehaviour {
         var _Effect = Effect.GetComponent<Explosion>();
         _Effect.radius = exprad;
 
+        Instantiate(_Prefab_Audio_Bomb);
         Destroy(gameObject);
 
         yield return null;

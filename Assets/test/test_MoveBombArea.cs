@@ -15,9 +15,9 @@ public class test_MoveBombArea : MonoBehaviour {
     {
         //var renderer = other.GetComponent<Renderer>();
         //if (renderer != null) renderer.material.color = Color.blue;
-        var circle = other.GetComponent<BombSelectCircle>();
+        var circle = other.GetComponentInChildren<BombSelectCircle>();
         if (circle != null) circle.setCircle(true);
-        var effect = other.GetComponent<CreateEffect>();
+        var effect = other.GetComponentInChildren<CreateEffect>();
         if (effect != null) _List_Bomb.Add(effect);
     }
 
@@ -25,9 +25,9 @@ public class test_MoveBombArea : MonoBehaviour {
     {
         //var renderer = other.GetComponent<Renderer>();
         //if (renderer != null) renderer.material.color = Color.white;
-        var circle = other.GetComponent<BombSelectCircle>();
+        var circle = other.GetComponentInChildren<BombSelectCircle>();
         if (circle != null) circle.setCircle(false);
-        var effect = other.GetComponent<CreateEffect>();
+        var effect = other.GetComponentInChildren<CreateEffect>();
         if (effect != null) _List_Bomb.Remove(effect);
     }
 }
