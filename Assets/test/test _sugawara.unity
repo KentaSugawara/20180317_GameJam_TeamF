@@ -112,7 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< HEAD
 --- !u!1 &18997537
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,8 +291,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Image: {fileID: 33145667}
   _Character: {fileID: 1772724001}
-=======
->>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
 --- !u!1 &52563445
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +702,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1772723997}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &254587162
 SpriteRenderer:
@@ -1230,7 +1227,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1772723997}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &478148324
 MeshRenderer:
@@ -1473,6 +1470,8 @@ MonoBehaviour:
   _InputName_MoveV: 
   _InputName_Jump: GamePad2_Jump
   _InputName_MoveBomb: GamePad2_MoveBomb
+  _InputName_Skill1: GamePad2_Skill1
+  _InputName_Skill2: 
   _MoveSpeed: 10
   _JumpPower: 2000
   _Rigidbody: {fileID: 526118949}
@@ -1484,11 +1483,8 @@ MonoBehaviour:
   _BombArea: {fileID: 1342808153}
   _isField1: 0
   _Gravity: 5000
-<<<<<<< HEAD
   _Collider: {fileID: 526118950}
   _Skill: {fileID: 2108462645}
-=======
->>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
   _LifeManager: {fileID: 110113968}
 --- !u!54 &526118949
 Rigidbody:
@@ -1896,7 +1892,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 689623057}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-<<<<<<< HEAD
 --- !u!1 &765455734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,8 +2065,6 @@ Transform:
   m_Father: {fileID: 1772723997}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
 --- !u!1 &932002617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,9 +2177,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1482127651}
   m_Father: {fileID: 1772723997}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &979722503
 MeshRenderer:
@@ -2194,7 +2188,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 979722501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2412,6 +2406,7 @@ Transform:
   - {fileID: 598523641}
   - {fileID: 1772723997}
   - {fileID: 1174987237}
+  - {fileID: 1653006199}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2508,8 +2503,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Field1: {fileID: 1049602391}
+  _BombScaleToField1: 0
   _Field2: {fileID: 1400034376}
-<<<<<<< HEAD
   _BombScaleToField2: 0
   _Character_1: {fileID: 1772724001}
   _Fields1:
@@ -2521,8 +2516,6 @@ MonoBehaviour:
   - {fileID: 1585614151}
   - {fileID: 1326218014}
   - {fileID: 512171504}
-=======
->>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
 --- !u!4 &1173225644
 Transform:
   m_ObjectHideFlags: 0
@@ -3276,7 +3269,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224533655130374694, guid: ce946c8a85efa7b48974865d9e236d45,
     type: 2}
   m_PrefabInternal: {fileID: 1478353745}
-<<<<<<< HEAD
 --- !u!1 &1482127650
 GameObject:
   m_ObjectHideFlags: 0
@@ -3423,8 +3415,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-=======
->>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
 --- !u!1 &1585614148
 GameObject:
   m_ObjectHideFlags: 0
@@ -3634,7 +3624,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224246088776311266, guid: f3713577b3e7afd448bb1db766de8718,
     type: 2}
   m_PrefabInternal: {fileID: 1647471809}
-<<<<<<< HEAD
 --- !u!1 &1648861344
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,8 +3809,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
-=======
->>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
 --- !u!1 &1658101733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4042,6 +4029,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
+  - {fileID: 901911088}
   - {fileID: 478148323}
   - {fileID: 254587161}
   - {fileID: 979722502}
@@ -4076,6 +4064,8 @@ MonoBehaviour:
   _InputName_MoveV: 
   _InputName_Jump: GamePad1_Jump
   _InputName_MoveBomb: GamePad1_MoveBomb
+  _InputName_Skill1: GamePad1_Skill1
+  _InputName_Skill2: 
   _MoveSpeed: 10
   _JumpPower: 2000
   _Rigidbody: {fileID: 1772724002}
@@ -4087,11 +4077,8 @@ MonoBehaviour:
   _BombArea: {fileID: 979722506}
   _isField1: 1
   _Gravity: 5000
-<<<<<<< HEAD
   _Collider: {fileID: 1772723999}
   _Skill: {fileID: 901911087}
-=======
->>>>>>> 98610d9e7882485aacc4142d07d0600027d02558
   _LifeManager: {fileID: 1341091000}
 --- !u!54 &1772724002
 Rigidbody:
