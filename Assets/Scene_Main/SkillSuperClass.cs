@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillSuperClass : MonoBehaviour {
+    [SerializeField]
+    private float _UseDelaySeconds;
+
     protected bool _canUse;
     public bool canUse
     {
@@ -10,7 +13,6 @@ public class SkillSuperClass : MonoBehaviour {
     }
 
     protected float _RemainingDelaySconds;
-
     public float RemainingDelaySconds
     {
         get { return _RemainingDelaySconds; }
@@ -22,12 +24,12 @@ public class SkillSuperClass : MonoBehaviour {
         return false;
     }
 
-    public void StartTimer(float Seconds)
+    public void StartTimer()
     {
         if (_canUse)
         {
             _canUse = false;
-            StartCoroutine(Routine_Timer(Seconds));
+            StartCoroutine(Routine_Timer(_UseDelaySeconds));
         }
     }
 
