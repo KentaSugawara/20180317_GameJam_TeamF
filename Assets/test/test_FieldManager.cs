@@ -8,9 +8,30 @@ public class test_FieldManager : MonoBehaviour {
     private Transform _Field1;
 
     [SerializeField]
+    private float _BombScaleToField1;
+
+    [SerializeField]
     private Transform _Field2;
 
-    public void MoveObject(Transform target, bool ToField2)
+    [SerializeField]
+    private float _BombScaleToField2;
+
+    //public void MoveObject(Transform target, bool ToField2)
+    //{
+    //    Transform filed;
+    //    if (ToField2)
+    //    {
+    //        filed = _Field2;
+    //    }
+    //    else
+    //    {
+    //        filed = _Field1;
+    //    }
+
+    //    target.SetParent(filed, false);
+    //}
+
+    public void MoveBomb(CreateEffect target, bool ToField2)
     {
         Transform filed;
         if (ToField2)
@@ -22,6 +43,6 @@ public class test_FieldManager : MonoBehaviour {
             filed = _Field1;
         }
 
-        target.SetParent(filed, false);
+        target.transform.SetParent(filed, false);
     }
 }

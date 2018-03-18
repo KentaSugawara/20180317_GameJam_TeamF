@@ -116,7 +116,7 @@ public class test_Character : MonoBehaviour {
                     if (target != null)
                     {
                         Debug.Log("Move!");
-                        _FieldManager.MoveObject(target.transform, _isField1);
+                        _FieldManager.MoveBomb(target, _isField1);
                         StartCoroutine(Routine_Delay());
                     }
                 }

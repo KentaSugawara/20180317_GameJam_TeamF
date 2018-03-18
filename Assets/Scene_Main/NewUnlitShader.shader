@@ -1,4 +1,4 @@
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+Ôªø// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
 Shader "Sprites/Custom/SpriteOutline"
 {
@@ -98,10 +98,10 @@ Shader "Sprites/Custom/SpriteOutline"
 	{
 		const fixed THRESHOLD = 0.1;
 
-	// å≥ÇÃÉeÉNÉXÉ`ÉÉ
+	// ÂÖÉ„ÅÆ„ÉÜ„ÇØ„Çπ„ÉÅ„É£
 	fixed4 base = SampleSpriteTexture(IN.texcoord) * IN.color;
 
-	// ÉAÉEÉgÉâÉCÉìêF
+	// „Ç¢„Ç¶„Éà„É©„Ç§„É≥Ëâ≤
 	fixed4 out_col = _OutLineColor;
 	_OutLineColor.a = 1;
 	half2 line_w = half2(_OutLineSpread, 0);
@@ -113,13 +113,13 @@ Shader "Sprites/Custom/SpriteOutline"
 	_OutLineColor.rgb = out_col.rgb;
 	_OutLineColor = lerp(base, _OutLineColor, max(0, sign(_OutLineSpread)));
 
-	// âe
+	// ÂΩ±
 	fixed4 shadow = SampleSpriteTexture(IN.texcoord - half2(_ShadowOffsetX, _ShadowOffsetY));
 	shadow = _ShadowColor * max(0, sign(shadow.a - THRESHOLD));
 	shadow.a *= _ShadowColor.a;
 	_ShadowColor = shadow;
 
-	// çáê¨
+	// ÂêàÊàê
 	fixed4 main_col = base;
 	main_col = lerp(main_col, _OutLineColor, (1 - main_col.a));
 	main_col.a = _Alpha * max(0, sign(main_col.a - THRESHOLD));
