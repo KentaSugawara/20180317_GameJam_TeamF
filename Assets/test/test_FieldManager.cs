@@ -31,6 +31,12 @@ public class test_FieldManager : MonoBehaviour {
     [SerializeField]
     private GameObject _Prefab_Audio_MoveBomb;
 
+    [SerializeField]
+    private float _MoveBombNeedSeconds;
+
+    [SerializeField]
+    private GameObject _Effect;
+
     private void Start()
     {
         StartCoroutine(Routine_Main());
@@ -80,24 +86,61 @@ public class test_FieldManager : MonoBehaviour {
     public void MoveBomb(CreateEffect target, bool ToField2)
     {
         if (target == null) return;
-        Transform filed;
+        if (target._isMoving) return;
+
+        Transform field;
         if (ToField2)
         {
-            filed = _Field2;
+            field = _Field2;
             target.exprad = _BombScaleToField2;
         }
         else
         {
-            filed = _Field1;
+            field = _Field1;
             target.exprad = _BombScaleToField1;
         }
-        target.exptime2 += 1.0f;
-        
-        Instantiate(_Prefab_Audio_MoveBomb);
+        target.exptime2 += 1.0f + _MoveBombNeedSeconds * 2.0f;
+
+        StartCoroutine(Routine_MoveBomb(target, field));
     }
 
     private IEnumerator Routine_MoveBomb(CreateEffect target, Transform filed)
     {
-        target.transform.SetParent(filed, false);
+        if (target) target._isMoving = true;
+
+        Vector3 Scale = target.SpriteObj.transform.localScale;
+
+        Vector3 b;
+
+        //縮小
+        for (float t = 0.0f; t < _MoveBombNeedSeconds; t += Time.deltaTime)
+        {
+            float e = t / _MoveBombNeedSeconds;
+            b = Vector3.Lerp(Scale, Vector3.zero, e);
+            if (target) target.SpriteObj.transform.localScale = Vector3.Lerp(b, Vector3.zero, e);
+            yield return null;
+        }
+        if (target) target.SpriteObj.transform.localScale = Vector3.zero;
+
+        //移動
+        if (target)
+        {
+            target.transform.SetParent(filed, false);
+            Instantiate(_Effect, target.transform.position, Quaternion.identity);
+        }
+        Instantiate(_Prefab_Audio_MoveBomb);
+
+        //拡大
+        for (float t = 0.0f; t < _MoveBombNeedSeconds; t += Time.deltaTime)
+        {
+            float e = t / _MoveBombNeedSeconds;
+            b = Vector3.Lerp(Vector3.zero, Scale, e);
+            if (target) target.SpriteObj.transform.localScale = Vector3.Lerp(b, Scale, e);
+            yield return null;
+        }
+
+
+        if (target) target.SpriteObj.transform.localScale = Scale;
+        if (target) target._isMoving = false;
     }
 }

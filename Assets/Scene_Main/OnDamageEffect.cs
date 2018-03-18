@@ -12,6 +12,9 @@ public class OnDamageEffect : MonoBehaviour {
 
     private float _ReminingSeconds;
 
+    [SerializeField]
+    private float _StartAlpha;
+
     [SerializeField, Range(0.0f, 1.0f)]
     private float _EffectBezier;
 
@@ -38,11 +41,12 @@ public class OnDamageEffect : MonoBehaviour {
             else
             {
                 float e = _ReminingSeconds / _EffectSeconds;
-                b1 = Mathf.Lerp(1.0f, _EffectBezier, e);
+                b1 = Mathf.Lerp(_StartAlpha, _EffectBezier, e);
                 b2 = Mathf.Lerp(_EffectBezier, 0.0f, e);
                 color.a = Mathf.Lerp(b1, b2, e);
             }
             _Image.color = color;
+            yield return null;
         }
     }
 }

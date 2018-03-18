@@ -4,19 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/imasaraogami/title.unity
-    guid: e07e34857a13da14a94b120a8f781798
-  - enabled: 0
-    path: Assets/UmeTest.unity
-    guid: ea8247d3646d94f448a55aafd58699e9
-  - enabled: 0
-    path: "Assets/test - \u30B3\u30D4\u30FC.unity"
-    guid: 8a48d61db20908243b92d32705d25ef2
-  - enabled: 1
-    path: Assets/test/test.unity
-    guid: 0e1fc83129010f344a64c366c90aa6ea
-  - enabled: 1
-    path: Assets/imasaraogami/New Scene.unity
-    guid: f9265cb44d478cb42995ac03978b6050
+  m_Scenes: []

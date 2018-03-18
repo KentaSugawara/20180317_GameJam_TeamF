@@ -15,8 +15,11 @@ public class Skill_BombDelayUp : SkillSuperClass
     {
         if (!bManager||!canUse) return false;
         StartCoroutine(BombDelayChange());
+        StartTimer(dummy);
         return true;
     }
+    private void dummy() { }
+
     IEnumerator BombDelayChange()
     {
         //前のディレイとの差（効果が終わったら足す）

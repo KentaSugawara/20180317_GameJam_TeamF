@@ -16,6 +16,16 @@ public class CreateEffect : MonoBehaviour {
     [SerializeField]
     private GameObject _Prefab_Audio_Bomb;
 
+    [SerializeField]
+    public bool _isMoving;
+
+    [SerializeField]
+    private GameObject _SpriteObj;
+    public GameObject SpriteObj
+    {
+        get { return _SpriteObj; }
+    }
+
     //爆発範囲設定用
     public float exprad;
 

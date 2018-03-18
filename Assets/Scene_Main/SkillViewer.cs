@@ -25,7 +25,7 @@ public class SkillViewer : MonoBehaviour {
             }
             else
             {
-                _Image.fillAmount = _TargetSkill.RemainingDelaySconds / _TargetSkill.UseDelaySeconds;
+                _Image.fillAmount = _TargetSkill.ElapsedDelaySconds / _TargetSkill.UseDelaySeconds;
             }
             yield return null;
         }

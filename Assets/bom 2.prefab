@@ -85,7 +85,7 @@ Transform:
   m_GameObject: {fileID: 1125287827190054}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4487942696994616}
   m_RootOrder: 1
@@ -137,6 +137,8 @@ MonoBehaviour:
   ScaleObject: {fileID: 114299722733365980}
   _Prefab_Audio_Bomb: {fileID: 1515756681852774, guid: cfc41cb7167b5e64fbd63f5251497117,
     type: 2}
+  _isMoving: 0
+  _SpriteObj: {fileID: 1936650588438714}
   exprad: 0
 --- !u!114 &114299722733365980
 MonoBehaviour:
@@ -167,11 +169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee559e2ad2716e4f93dd77533f85eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _StartScale: {x: 0.5, y: 0.5, z: 0.5}
-  _StartToEndScaleBezier: {x: 0.7, y: 0.7, z: 0.7}
+  _StartScale: {x: 0.1, y: 0.1, z: 0.1}
+  _StartToEndScaleBezier: {x: 0.15, y: 0.15, z: 0.15}
   _StartToEndSeconds: 0.5
-  _EndScale: {x: 0.7, y: 0.7, z: 0.7}
-  _EndToStartScaleBezier: {x: 0.5, y: 0.5, z: 0.5}
+  _EndScale: {x: 0.15, y: 0.15, z: 0.15}
+  _EndToStartScaleBezier: {x: 0.1, y: 0.1, z: 0.1}
   _EndToStartSeconds: 0.5
   _Interval: 0
 --- !u!114 &114841498799697274
@@ -276,8 +278,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: be4cd3301d0ff1f47816ec16fefa297b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0.853, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 82ec4e736f7eb104b9c321386c91d212, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

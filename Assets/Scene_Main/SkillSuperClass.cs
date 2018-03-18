@@ -10,17 +10,17 @@ public class SkillSuperClass : MonoBehaviour {
         get { return _UseDelaySeconds; }
     }
 
-    protected bool _canUse;
+    protected bool _canUse = true;
     public bool canUse
     {
         get { return _canUse; }
     }
 
-    protected float _RemainingDelaySconds;
-    public float RemainingDelaySconds
+    protected float _ElapsedDelaySconds;
+    public float ElapsedDelaySconds
     {
-        get { return _RemainingDelaySconds; }
-        set { _RemainingDelaySconds = value; }
+        get { return _ElapsedDelaySconds; }
+        set { _ElapsedDelaySconds = value; }
     }
 
     [SerializeField]
@@ -49,7 +49,13 @@ public class SkillSuperClass : MonoBehaviour {
 
     protected IEnumerator Routine_Timer(float Seconds, System.Action endcallback)
     {
-        yield return new WaitForSeconds(Seconds);
+        //yield return new WaitForSeconds(Seconds);
+        for (float t = 0.0f;t < Seconds; t += Time.deltaTime)
+        {
+            _ElapsedDelaySconds = t;
+            yield return null;
+        }
+        _ElapsedDelaySconds = Seconds;
         endcallback();
         _canUse = true;
     }

@@ -58,11 +58,14 @@ public class test_Character : MonoBehaviour {
     private Collider _Collider;
 
     [SerializeField]
-    private SkillSuperClass _Skill1;
-    public SkillSuperClass Skill1
+    private OnDamageEffect _DamageEffect;
+
+    [SerializeField]
+    private SkillSuperClass _Skill;
+    public SkillSuperClass Skill
     {
-        get { return _Skill1; }
-        set { _Skill1 = value; }
+        get { return _Skill; }
+        set { _Skill = value; }
     }
 
 
@@ -151,7 +154,7 @@ public class test_Character : MonoBehaviour {
             if (Input.GetButtonDown(_InputName_Skill1))
             {
                 Debug.Log("UseSkillllll");
-                _Skill1.Use();
+                _Skill.Use();
             }
 
             v.x = 0.0f;
@@ -198,5 +201,6 @@ public class test_Character : MonoBehaviour {
     public void Damage(int value)
     {
         _LifeManager.PlayerDamageOn();
+        _DamageEffect.IncrementTimer();
     }
 }

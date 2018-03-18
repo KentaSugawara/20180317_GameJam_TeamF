@@ -81,8 +81,8 @@ public class MainRoutine : MonoBehaviour {
             //タイマー開始
             _Timer.StartMainRoutine();
 
-            _SkillViewer1.Init(_Player1_TargetCharacter.Skill1);
-            _SkillViewer2.Init(_Player2_TargetCharacter.Skill1);
+            _SkillViewer1.Init(_Player1_TargetCharacter.Skill);
+            _SkillViewer2.Init(_Player2_TargetCharacter.Skill);
         }
 
     }

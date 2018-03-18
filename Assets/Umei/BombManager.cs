@@ -182,6 +182,7 @@ public class BombManager : MonoBehaviour
     }
 }
 
+[System.Serializable]
 public class BombState
 {
     public float SpawnDelay;
