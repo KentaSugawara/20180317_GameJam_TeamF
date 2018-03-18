@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillSuperClass : MonoBehaviour {
-    private bool _canUse;
+    protected bool _canUse;
     public bool canUse
     {
         get { return _canUse; }
     }
 
-    private float _RemainingDelaySconds;
+    protected float _RemainingDelaySconds;
 
     public float RemainingDelaySconds
     {
@@ -31,7 +31,7 @@ public class SkillSuperClass : MonoBehaviour {
         }
     }
 
-    private IEnumerator Routine_Timer(float Seconds)
+    protected IEnumerator Routine_Timer(float Seconds)
     {
         yield return new WaitForSeconds(Seconds);
         _canUse = true;
