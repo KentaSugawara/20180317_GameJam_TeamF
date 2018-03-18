@@ -368,12 +368,17 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!224 &1131757511 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224939926092076048, guid: 36d11d30695923e4b8097ca92514f0de,
+    type: 2}
+  m_PrefabInternal: {fileID: 1320923818}
 --- !u!1001 &1320923818
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1801455931}
     m_Modifications:
     - target: {fileID: 224939926092076048, guid: 36d11d30695923e4b8097ca92514f0de,
         type: 2}
@@ -413,7 +418,7 @@ Prefab:
     - target: {fileID: 224939926092076048, guid: 36d11d30695923e4b8097ca92514f0de,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224939926092076048, guid: 36d11d30695923e4b8097ca92514f0de,
         type: 2}
@@ -489,6 +494,36 @@ Prefab:
         type: 2}
       propertyPath: nextSceneName
       value: New Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114050072161671366, guid: 36d11d30695923e4b8097ca92514f0de,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223255080435570050, guid: 36d11d30695923e4b8097ca92514f0de,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 223255080435570050, guid: 36d11d30695923e4b8097ca92514f0de,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1325919913}
+    - target: {fileID: 224492156159383130, guid: 36d11d30695923e4b8097ca92514f0de,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224492156159383130, guid: 36d11d30695923e4b8097ca92514f0de,
+        type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223255080435570050, guid: 36d11d30695923e4b8097ca92514f0de,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36d11d30695923e4b8097ca92514f0de, type: 2}
@@ -824,6 +859,7 @@ Transform:
   - {fileID: 1675706372}
   - {fileID: 183919321}
   - {fileID: 1346823601}
+  - {fileID: 1131757511}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
