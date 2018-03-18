@@ -28,6 +28,9 @@ public class test_FieldManager : MonoBehaviour {
     [SerializeField]
     private List<Collider> _Fields2 = new List<Collider>();
 
+    [SerializeField]
+    private GameObject _Prefab_Audio_MoveBomb;
+
     private void Start()
     {
         StartCoroutine(Routine_Main());
@@ -89,5 +92,6 @@ public class test_FieldManager : MonoBehaviour {
             target.exprad = _BombScaleToField1;
         }
         target.transform.SetParent(filed, false);
+        Instantiate(_Prefab_Audio_MoveBomb);
     }
 }

@@ -58,12 +58,13 @@ public class test_Character : MonoBehaviour {
     private Collider _Collider;
 
     [SerializeField]
-    private SkillSuperClass _Skill;
-    public SkillSuperClass Skill
+    private SkillSuperClass _Skill1;
+    public SkillSuperClass Skill1
     {
-        get { return _Skill; }
-        set { _Skill = value; }
+        get { return _Skill1; }
+        set { _Skill1 = value; }
     }
+
 
     private bool _isRun;
     private bool _inBombMoveDelay = false;
@@ -72,8 +73,7 @@ public class test_Character : MonoBehaviour {
     private int hash_isLeft = Animator.StringToHash("isLeft");
     private int hash_isJump = Animator.StringToHash("isJump");
 
-    // Use this for initialization
-    void Start () {
+    public void StartRoutine () {
         var joysticks = Input.GetJoystickNames();
         foreach (var j in joysticks)
         {
@@ -151,7 +151,7 @@ public class test_Character : MonoBehaviour {
             if (Input.GetButtonDown(_InputName_Skill1))
             {
                 Debug.Log("UseSkillllll");
-                _Skill.Use();
+                _Skill1.Use();
             }
 
             v.x = 0.0f;

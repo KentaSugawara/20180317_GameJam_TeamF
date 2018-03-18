@@ -13,6 +13,9 @@ public class CreateEffect : MonoBehaviour {
 
     [SerializeField] ScaleObject ScaleObject;
 
+    [SerializeField]
+    private GameObject _Prefab_Audio_Bomb;
+
     //爆発範囲設定用
     public float exprad;
 
@@ -40,6 +43,7 @@ public class CreateEffect : MonoBehaviour {
         var _Effect = Effect.GetComponent<Explosion>();
         _Effect.radius = exprad;
 
+        Instantiate(_Prefab_Audio_Bomb);
         Destroy(gameObject);
 
         yield return null;
