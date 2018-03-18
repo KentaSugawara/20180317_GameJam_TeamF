@@ -8,13 +8,13 @@ public class test_FieldManager : MonoBehaviour {
     private Transform _Field1;
 
     [SerializeField]
-    private float _BombScaleToField1;
+    public float _BombScaleToField1;
 
     [SerializeField]
     private Transform _Field2;
 
     [SerializeField]
-    private float _BombScaleToField2;
+    public float _BombScaleToField2;
 
     //public void MoveObject(Transform target, bool ToField2)
     //{
@@ -37,11 +37,16 @@ public class test_FieldManager : MonoBehaviour {
         if (ToField2)
         {
             filed = _Field2;
+            target.exprad = _BombScaleToField2;
         }
         else
         {
             filed = _Field1;
+            target.exprad = _BombScaleToField1;
         }
+
+
+
 
         target.transform.SetParent(filed, false);
     }
