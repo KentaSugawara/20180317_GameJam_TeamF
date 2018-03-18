@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class SkillSuperClass : MonoBehaviour {
     [SerializeField]
-    private float _UseDelaySeconds;
+    protected float _UseDelaySeconds;
+    public float UseDelaySeconds
+    {
+        get { return _UseDelaySeconds; }
+    }
 
     protected bool _canUse;
     public bool canUse

@@ -8,7 +8,11 @@ public class CreateEffect : MonoBehaviour {
     [SerializeField] GameObject Effect;
     //接地から爆発までの時間
     [SerializeField] float exptime=3;
-    
+
+    [SerializeField] float exptime2 = 1.5f;
+
+    [SerializeField] ScaleObject ScaleObject;
+
     //爆発範囲設定用
     public float exprad;
 
@@ -24,6 +28,10 @@ public class CreateEffect : MonoBehaviour {
     IEnumerator Countdown()
     {
         yield return new WaitForSeconds(exptime);
+
+        ScaleObject.enabled = true;
+
+        yield return new WaitForSeconds(exptime2);
         //爆発エフェクト生成
         var effect = Instantiate(Effect);
         effect.transform.position = transform.position;
