@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class SkillSuperClass : MonoBehaviour {
     [SerializeField]
-    private float _UseDelaySeconds;
+    protected float _UseDelaySeconds;
+    public float UseDelaySeconds
+    {
+        get { return _UseDelaySeconds; }
+    }
 
-    protected bool _canUse;
+    protected bool _canUse = true;
     public bool canUse
     {
         get { return _canUse; }
     }
 
-    protected float _ElapsedDelaySconds;
+    protected float _ElapsedDelaySconds = 0.0f;
     public float ElapsedDelaySconds
     {
         get { return _ElapsedDelaySconds; }
-    }
-
-    protected float _RemainingDelaySconds;
-    public float RemainingDelaySconds
-    {
-        get { return _RemainingDelaySconds; }
-        set { _RemainingDelaySconds = value; }
     }
 
     [SerializeField]
@@ -55,6 +52,7 @@ public class SkillSuperClass : MonoBehaviour {
             _ElapsedDelaySconds = t;
             yield return null;
         }
+        _ElapsedDelaySconds = 1.1f;
         endcallback();
         _canUse = true;
     }

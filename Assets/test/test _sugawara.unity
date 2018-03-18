@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 33145666}
   - component: {fileID: 33145668}
   - component: {fileID: 33145667}
+  - component: {fileID: 33145669}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -180,6 +181,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 33145665}
+--- !u!114 &33145669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 33145665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc84b05af2019eb49bb87c83ce41412e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Image: {fileID: 33145667}
+  _Character: {fileID: 1772724001}
 --- !u!1 &52563445
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +563,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 1772723997}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &254587162
 SpriteRenderer:
@@ -1074,7 +1088,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1772723997}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &478148324
 MeshRenderer:
@@ -1274,7 +1288,7 @@ MonoBehaviour:
   _InputName_MoveV: 
   _InputName_Jump: GamePad2_Jump
   _InputName_MoveBomb: GamePad2_MoveBomb
-  _InputName_Skill1: 
+  _InputName_Skill1: GamePad2_Skill1
   _InputName_Skill2: 
   _MoveSpeed: 10
   _JumpPower: 3000
@@ -1637,12 +1651,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 901911086}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50.04841, y: 5.020749, z: 3.4650137}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.09681702, y: 10.041498, z: 6.9300275}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1772723997}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &932002617
 GameObject:
@@ -1759,7 +1773,7 @@ Transform:
   m_Children:
   - {fileID: 1482127651}
   m_Father: {fileID: 1772723997}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &979722503
 MeshRenderer:
@@ -3290,6 +3304,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
+  - {fileID: 901911088}
   - {fileID: 478148323}
   - {fileID: 254587161}
   - {fileID: 979722502}
@@ -3324,7 +3339,7 @@ MonoBehaviour:
   _InputName_MoveV: 
   _InputName_Jump: GamePad1_Jump
   _InputName_MoveBomb: GamePad1_MoveBomb
-  _InputName_Skill1: 
+  _InputName_Skill1: GamePad1_Skill1
   _InputName_Skill2: 
   _MoveSpeed: 10
   _JumpPower: 3000

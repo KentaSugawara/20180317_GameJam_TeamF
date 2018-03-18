@@ -59,6 +59,7 @@ public class test_Character : MonoBehaviour {
     public SkillSuperClass Skill
     {
         get { return _Skill; }
+        set { _Skill = value; }
     }
 
     private bool _isRun;
@@ -137,6 +138,7 @@ public class test_Character : MonoBehaviour {
 
             if (Input.GetButtonDown(_InputName_Skill1))
             {
+                Debug.Log("UseSkillllll");
                 _Skill.Use();
             }
 

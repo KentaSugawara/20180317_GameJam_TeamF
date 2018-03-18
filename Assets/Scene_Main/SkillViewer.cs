@@ -21,7 +21,14 @@ public class SkillViewer : MonoBehaviour {
         {
             if (_Character.Skill != null)
             {
-                _Image.fillAmount = _Character.Skill.ElapsedDelaySconds / _Character.Skill.RemainingDelaySconds;
+                if (_Character.Skill.canUse)
+                {
+                    _Image.fillAmount = 1.0f;
+                }
+                else
+                {
+                    _Image.fillAmount = _Character.Skill.ElapsedDelaySconds / _Character.Skill.UseDelaySeconds;
+                }
             }
             yield return null;
         }
