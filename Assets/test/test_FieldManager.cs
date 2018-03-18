@@ -8,13 +8,13 @@ public class test_FieldManager : MonoBehaviour {
     private Transform _Field1;
 
     [SerializeField]
-    private float _BombScaleToField1;
+    public float _BombScaleToField1;
 
     [SerializeField]
     private Transform _Field2;
 
     [SerializeField]
-    private float _BombScaleToField2;
+    public float _BombScaleToField2;
 
     //public void MoveObject(Transform target, bool ToField2)
     //{
