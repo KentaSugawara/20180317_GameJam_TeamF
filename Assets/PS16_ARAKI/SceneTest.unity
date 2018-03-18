@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9552400d12ea84890cecc9cafe0a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: SceneTest
+  nextSceneName: test _sugawara
   gameFirstScene: 0
   feedTime: 3
 --- !u!1 &1834505454

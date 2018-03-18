@@ -42,7 +42,7 @@ public class MoveScene : MonoBehaviour
             yield return null;
         }
         for (timer = 0; timer < 100; timer += Time.deltaTime)
-            if (Input.GetKey(KeyCode.Space) || timer > 10 || async.isDone == true)
+            if (timer > 10 || async.isDone == true)
             {
                 async.allowSceneActivation = true;
                 break;
@@ -62,12 +62,12 @@ public class MoveScene : MonoBehaviour
         check = false;
     }
 
-    //   private void Update()
-    //   {
-    //       if (check == false)
-    //       {
-    //           timer += Time.deltaTime;
-    //           if (timer >= 2.0f) NextScene();
-    //       }
-    //   }
+       private void Update()
+       {
+           if (check == false)
+           {
+               timer += Time.deltaTime;
+               if (timer >= 2.0f) NextScene();
+           }
+       }
 }
