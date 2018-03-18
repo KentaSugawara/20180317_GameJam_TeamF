@@ -43,15 +43,7 @@ public class MoveScene : MonoBehaviour
             yield return null;
         }
         img.color = new Color(0, 0, 0, 1);
-        for (timer = 0; timer < 60; timer += Time.deltaTime)
-        {
-            if (timer >= 60 || async.isDone == true)
-            {
-                async.allowSceneActivation = true;
-                break;
-            }
-            yield return null;
-        }
+        async.allowSceneActivation = true;
     }
     private IEnumerator OffMoveScene()
     {
